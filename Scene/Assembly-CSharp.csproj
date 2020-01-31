@@ -51,6 +51,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\EasyTouchTrigger.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickBase.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickDrag.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickEnterOverExist.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickLongTap.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickPinch.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickSwipe.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickTap.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickTouch.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Components\QuickTwist.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Engine\BaseFinger.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Engine\EasyTouch.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Engine\EasyTouchInput.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Engine\ECamera.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Engine\Finger.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Engine\Gesture.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Engine\TwoFingerGesture.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Component\ETCSetDirectActionTransform.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ComponentExtensions.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCArea.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCAxis.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCBase.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCButton.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCDPad.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCInput.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCJoystick.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCTouchPad.cs" />
      <Compile Include="Assets\Scripts\AdaptionExcept.cs" />
      <Compile Include="Assets\Scripts\AfterImageEffects.cs" />
      <Compile Include="Assets\Scripts\AllClickListener.cs" />
@@ -64,8 +91,13 @@
      <Compile Include="Assets\Scripts\Tools\DeleteUnusingThings.cs" />
      <Compile Include="Assets\Scripts\Tools\ShowSelectionDependencies.cs" />
      <Compile Include="Assets\Scripts\Tools\TXTFileHelper.cs" />
+     <None Include="Assets\Easytouch\EasyTouchControls\ReleaseNotes.txt" />
+     <None Include="Assets\Easytouch\Readme.txt" />
      <None Include="Assets\Models\Scenes\Scene_01\Mobile_Transparent_Vertex_Color_Zwrite.shader" />
      <None Include="Assets\Models\Scenes\Scene_03\Mobile_Transparent_Vertex_Color_Zwrite.shader" />
+     <None Include="Assets\Easytouch\EasyTouchControls\Issues in button behavior (MAC).txt" />
+     <None Include="Assets\Easytouch\EasyTouch\RealseNotes.txt" />
+     <None Include="Assets\Easytouch\EasyTouch\How to migrate from EasyTouch 4.X.txt" />
      <None Include="Assets\Models\Scenes\Scene_02\Mobile_Transparent_Vertex_Color_Zwrite.shader" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>E:/Unity2017.4.20f2/Unity 2017.4.20f2-64bit/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>

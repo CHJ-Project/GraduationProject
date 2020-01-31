@@ -51,6 +51,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\EasytouchHierachyCallBack.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\EasyTouchInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\EasyTouchMenu.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\EasyTouchTriggerInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\EasyTouchWelcomeScreen.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\HTGuiTools.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickDragInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickEnterExitInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickLongTapInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickPinchInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickSwipeInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickTapInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickTouchInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouch\Plugins\Editor\QuickTwistInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCAreaInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCAxisInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCButtonInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCDPadInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCGuiTools.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCJoystickInspector.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCMenu.cs" />
+     <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\Editor\ETCTouchPadInspector.cs" />
      <Compile Include="Assets\Editor\AssetProcessor.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>E:/Unity2017.4.20f2/Unity 2017.4.20f2-64bit/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
