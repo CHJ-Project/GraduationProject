@@ -1,0 +1,1849 @@
+fileFormatVersion: 2
+guid: 2f555b990346d5445b4edf1cd5a4c967
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bind_Head
+    100002: Bind_Hips
+    100004: Bind_Joint_GRP
+    100006: Bind_LeftArm
+    100008: Bind_LeftFoot
+    100010: Bind_LeftForeArm
+    100012: Bind_LeftHand
+    100014: Bind_LeftHandIndex1
+    100016: Bind_LeftHandIndex2
+    100018: Bind_LeftHandIndex3
+    100020: Bind_LeftHandMiddle1
+    100022: Bind_LeftHandMiddle2
+    100024: Bind_LeftHandMiddle3
+    100026: Bind_LeftHandRing1
+    100028: Bind_LeftHandRing2
+    100030: Bind_LeftHandRing3
+    100032: Bind_LeftHandThumb1
+    100034: Bind_LeftHandThumb2
+    100036: Bind_LeftHandThumb3
+    100038: Bind_LeftLeg
+    100040: Bind_LeftShoulder
+    100042: Bind_LeftToeBase
+    100044: Bind_LeftUpLeg
+    100046: Bind_Neck
+    100048: Bind_RightArm
+    100050: Bind_RightFoot
+    100052: Bind_RightForeArm
+    100054: Bind_RightHand
+    100056: Bind_RightHandIndex1
+    100058: Bind_RightHandIndex2
+    100060: Bind_RightHandIndex3
+    100062: Bind_RightHandMiddle1
+    100064: Bind_RightHandMiddle2
+    100066: Bind_RightHandMiddle3
+    100068: Bind_RightHandRing1
+    100070: Bind_RightHandRing2
+    100072: Bind_RightHandRing3
+    100074: Bind_RightHandThumb1
+    100076: Bind_RightHandThumb2
+    100078: Bind_RightHandThumb3
+    100080: Bind_RightLeg
+    100082: Bind_RightShoulder
+    100084: Bind_RightToeBase
+    100086: Bind_RightUpLeg
+    100088: Bind_Root
+    100090: Bind_Spine
+    100092: Bind_Spine1
+    100094: Bind_Spine2
+    100096: //RootNode
+    100098: Joint_GRP
+    100100: Katana1
+    100102: Katana_Left
+    100104: Mesh_GRP
+    100106: Mesh_Object001
+    100108: transform1
+    100110: AnimData_Head
+    100112: AnimData_HeadTop_End
+    100114: AnimData_Hips
+    100116: AnimData_Joint_GRP
+    100118: AnimData_LeftArm
+    100120: AnimData_LeftFoot
+    100122: AnimData_LeftForeArm
+    100124: AnimData_LeftHand
+    100126: AnimData_LeftHandIndex1
+    100128: AnimData_LeftHandIndex2
+    100130: AnimData_LeftHandIndex3
+    100132: AnimData_LeftHandIndex4
+    100134: AnimData_LeftHandMiddle1
+    100136: AnimData_LeftHandMiddle2
+    100138: AnimData_LeftHandMiddle3
+    100140: AnimData_LeftHandMiddle4
+    100142: AnimData_LeftHandRing1
+    100144: AnimData_LeftHandRing2
+    100146: AnimData_LeftHandRing3
+    100148: AnimData_LeftHandRing4
+    100150: AnimData_LeftHandThumb1
+    100152: AnimData_LeftHandThumb2
+    100154: AnimData_LeftHandThumb3
+    100156: AnimData_LeftHandThumb4
+    100158: AnimData_LeftLeg
+    100160: AnimData_LeftShoulder
+    100162: AnimData_LeftToe_End
+    100164: AnimData_LeftToeBase
+    100166: AnimData_LeftUpLeg
+    100168: AnimData_Neck
+    100170: AnimData_RightArm
+    100172: AnimData_RightFoot
+    100174: AnimData_RightForeArm
+    100176: AnimData_RightHand
+    100178: AnimData_RightHandIndex1
+    100180: AnimData_RightHandIndex2
+    100182: AnimData_RightHandIndex3
+    100184: AnimData_RightHandIndex4
+    100186: AnimData_RightHandMiddle1
+    100188: AnimData_RightHandMiddle2
+    100190: AnimData_RightHandMiddle3
+    100192: AnimData_RightHandMiddle4
+    100194: AnimData_RightHandRing1
+    100196: AnimData_RightHandRing2
+    100198: AnimData_RightHandRing3
+    100200: AnimData_RightHandRing4
+    100202: AnimData_RightHandThumb1
+    100204: AnimData_RightHandThumb2
+    100206: AnimData_RightHandThumb3
+    100208: AnimData_RightHandThumb4
+    100210: AnimData_RightLeg
+    100212: AnimData_RightShoulder
+    100214: AnimData_RightToe_End
+    100216: AnimData_RightToeBase
+    100218: AnimData_RightUpLeg
+    100220: AnimData_Root
+    100222: AnimData_Spine
+    100224: AnimData_Spine1
+    100226: AnimData_Spine2
+    100228: Bind_HeadTop_End
+    100230: Bind_LeftHandIndex4
+    100232: Bind_LeftHandMiddle4
+    100234: Bind_LeftHandRing4
+    100236: Bind_LeftHandThumb4
+    100238: Bind_LeftToe_End
+    100240: Bind_RightHandIndex4
+    100242: Bind_RightHandMiddle4
+    100244: Bind_RightHandRing4
+    100246: Bind_RightHandThumb4
+    100248: Bind_RightToe_End
+    100250: CTRL_GRP
+    100252: FK_LeftArm
+    100254: FK_LeftFoot
+    100256: FK_LeftForeArm
+    100258: FK_LeftHand
+    100260: FK_LeftLeg
+    100262: FK_LeftToe_End
+    100264: FK_LeftToeBase
+    100266: FK_LeftUpLeg
+    100268: FK_RightArm
+    100270: FK_RightFoot
+    100272: FK_RightForeArm
+    100274: FK_RightHand
+    100276: FK_RightLeg
+    100278: FK_RightToe_End
+    100280: FK_RightToeBase
+    100282: FK_RightUpLeg
+    100284: global_CTRL
+    100286: Head_CTRL
+    100288: Head_CTRL_AnimData_CONST_GRP
+    100290: Head_CTRL_In_Rig_CONST_GRP
+    100292: Head_CTRL_Inherit_Rotation_GRP
+    100294: Head_CTRL_POS_GRP
+    100296: IK_Dummy_Hips
+    100298: IK_Dummy_Joint_GRP
+    100300: IK_Dummy_LeftShoulder
+    100302: IK_Dummy_RightShoulder
+    100304: IK_Dummy_Root
+    100306: IK_Dummy_Spine
+    100308: IK_Dummy_Spine1
+    100310: IK_Dummy_Spine2
+    100312: IK_LeftArm
+    100314: IK_LeftFoot
+    100316: IK_LeftForeArm
+    100318: IK_LeftHand
+    100320: IK_LeftLeg
+    100322: IK_LeftToe_End
+    100324: IK_LeftToeBase
+    100326: IK_LeftUpLeg
+    100328: IK_RightArm
+    100330: IK_RightFoot
+    100332: IK_RightForeArm
+    100334: IK_RightHand
+    100336: IK_RightLeg
+    100338: IK_RightToe_End
+    100340: IK_RightToeBase
+    100342: IK_RightUpLeg
+    100344: joint1
+    100346: Left_Ankle_IK_AnimData_GRP
+    100348: Left_Ankle_IK_CTRL
+    100350: Left_Toe_End_IK_CTRL
+    100352: Left_Toe_IK_AnimData_GRP
+    100354: Left_ToeBase_IK_AnimData_GRP
+    100356: Left_ToeBase_IK_CTRL
+    100358: Left_ToeBase_IkHandle
+    100360: LeftArm_FK_CTRL
+    100362: LeftArm_FK_CTRL_AnimData_CONST_GRP
+    100364: LeftArm_FK_CTRL_In_Rig_CONST_GRP
+    100366: LeftArm_FK_CTRL_POS_GRP
+    100368: LeftFoot_FK_CTRL
+    100370: LeftFoot_FK_CTRL_AnimData_CONST_GRP
+    100372: LeftFoot_FK_CTRL_In_Rig_CONST_GRP
+    100374: LeftFoot_FK_CTRL_POS_GRP
+    100376: LeftFoot_IK_BakingLOC
+    100378: LeftFoot_IK_CTRL
+    100380: LeftFoot_IK_CTRL_AnimData_CONST_GRP
+    100382: LeftFoot_IK_CTRL_grandparent_AnimData_CONST_GRP
+    100384: LeftFoot_IK_CTRL_grandparent_Global_POS_GRP
+    100386: LeftFoot_IK_CTRL_grandparent_inRig_CONST_GRP
+    100388: LeftFoot_IK_CTRL_grandparent_POS_GRP
+    100390: LeftFoot_IK_CTRL_In_Rig_CONST_GRP
+    100392: LeftFoot_IK_CTRL_parent_AnimData_CONST_GRP
+    100394: LeftFoot_IK_CTRL_parent_Global_POS_GRP
+    100396: LeftFoot_IK_CTRL_parent_POS_GRP
+    100398: LeftFoot_IK_CTRL_POS_GRP
+    100400: LeftFoot_IK_CTRL_Reorient_GRP
+    100402: LeftFoot_IK_Handle
+    100404: LeftFoot_Options
+    100406: LeftForeArm_FK_CTRL
+    100408: LeftForeArm_FK_CTRL_AnimData_CONST_GRP
+    100410: LeftForeArm_FK_CTRL_In_Rig_CONST_GRP
+    100412: LeftForeArm_FK_CTRL_POS_GRP
+    100414: LeftForeArm_IK_BakingLOC
+    100416: LeftForeArm_IK_CTRL
+    100418: LeftForeArm_IK_CTRL_AnimData_CONST_GRP
+    100420: LeftForeArm_IK_CTRL_GuideCurve
+    100422: LeftForeArm_IK_CTRL_GuideCurve_Cluster1Handle
+    100424: LeftForeArm_IK_CTRL_GuideCurve_Cluster2Handle
+    100426: LeftForeArm_IK_CTRL_In_Rig_CONST_GRP
+    100428: LeftForeArm_IK_CTRL_parent_AnimData_CONST_GRP
+    100430: LeftForeArm_IK_CTRL_parent_Global_POS_GRP
+    100432: LeftForeArm_IK_CTRL_parent_POS_GRP
+    100434: LeftForeArm_IK_CTRL_POS_GRP
+    100436: LeftHand_CTRLs_GRP
+    100438: LeftHand_FK_CTRL
+    100440: LeftHand_FK_CTRL_AnimData_CONST_GRP
+    100442: LeftHand_FK_CTRL_In_Rig_CONST_GRP
+    100444: LeftHand_FK_CTRL_POS_GRP
+    100446: LeftHand_IK_CTRL
+    100448: LeftHand_IK_CTRL_AnimData_CONST_GRP
+    100450: LeftHand_IK_CTRL_grandparent_AnimData_CONST_GRP
+    100452: LeftHand_IK_CTRL_grandparent_Global_POS_GRP
+    100454: LeftHand_IK_CTRL_grandparent_inRig_CONST_GRP
+    100456: LeftHand_IK_CTRL_grandparent_POS_GRP
+    100458: LeftHand_IK_CTRL_In_Rig_CONST_GRP
+    100460: LeftHand_IK_CTRL_parent_AnimData_CONST_GRP
+    100462: LeftHand_IK_CTRL_parent_Global_POS_GRP
+    100464: LeftHand_IK_CTRL_parent_POS_GRP
+    100466: LeftHand_IK_CTRL_POS_GRP
+    100468: LeftHand_IK_Handle
+    100470: LeftHand_Options
+    100472: LeftHandIndex1_CTRL
+    100474: LeftHandIndex1_CTRL_AnimData_CONST_GRP
+    100476: LeftHandIndex1_CTRL_In_Rig_CONST_GRP
+    100478: LeftHandIndex1_CTRL_POS_GRP
+    100480: LeftHandIndex2_CTRL
+    100482: LeftHandIndex2_CTRL_AnimData_CONST_GRP
+    100484: LeftHandIndex2_CTRL_In_Rig_CONST_GRP
+    100486: LeftHandIndex2_CTRL_POS_GRP
+    100488: LeftHandIndex3_CTRL
+    100490: LeftHandIndex3_CTRL_AnimData_CONST_GRP
+    100492: LeftHandIndex3_CTRL_In_Rig_CONST_GRP
+    100494: LeftHandIndex3_CTRL_POS_GRP
+    100496: LeftHandMiddle1_CTRL
+    100498: LeftHandMiddle1_CTRL_AnimData_CONST_GRP
+    100500: LeftHandMiddle1_CTRL_In_Rig_CONST_GRP
+    100502: LeftHandMiddle1_CTRL_POS_GRP
+    100504: LeftHandMiddle2_CTRL
+    100506: LeftHandMiddle2_CTRL_AnimData_CONST_GRP
+    100508: LeftHandMiddle2_CTRL_In_Rig_CONST_GRP
+    100510: LeftHandMiddle2_CTRL_POS_GRP
+    100512: LeftHandMiddle3_CTRL
+    100514: LeftHandMiddle3_CTRL_AnimData_CONST_GRP
+    100516: LeftHandMiddle3_CTRL_In_Rig_CONST_GRP
+    100518: LeftHandMiddle3_CTRL_POS_GRP
+    100520: LeftHandRing1_CTRL
+    100522: LeftHandRing1_CTRL_AnimData_CONST_GRP
+    100524: LeftHandRing1_CTRL_In_Rig_CONST_GRP
+    100526: LeftHandRing1_CTRL_POS_GRP
+    100528: LeftHandRing2_CTRL
+    100530: LeftHandRing2_CTRL_AnimData_CONST_GRP
+    100532: LeftHandRing2_CTRL_In_Rig_CONST_GRP
+    100534: LeftHandRing2_CTRL_POS_GRP
+    100536: LeftHandRing3_CTRL
+    100538: LeftHandRing3_CTRL_AnimData_CONST_GRP
+    100540: LeftHandRing3_CTRL_In_Rig_CONST_GRP
+    100542: LeftHandRing3_CTRL_POS_GRP
+    100544: LeftHandThumb1_CTRL
+    100546: LeftHandThumb1_CTRL_AnimData_CONST_GRP
+    100548: LeftHandThumb1_CTRL_In_Rig_CONST_GRP
+    100550: LeftHandThumb1_CTRL_POS_GRP
+    100552: LeftHandThumb2_CTRL
+    100554: LeftHandThumb2_CTRL_AnimData_CONST_GRP
+    100556: LeftHandThumb2_CTRL_In_Rig_CONST_GRP
+    100558: LeftHandThumb2_CTRL_POS_GRP
+    100560: LeftHandThumb3_CTRL
+    100562: LeftHandThumb3_CTRL_AnimData_CONST_GRP
+    100564: LeftHandThumb3_CTRL_In_Rig_CONST_GRP
+    100566: LeftHandThumb3_CTRL_POS_GRP
+    100568: LeftLeg_FK_CTRL
+    100570: LeftLeg_FK_CTRL_AnimData_CONST_GRP
+    100572: LeftLeg_FK_CTRL_In_Rig_CONST_GRP
+    100574: LeftLeg_FK_CTRL_POS_GRP
+    100576: LeftLeg_IK_BakingLOC
+    100578: LeftLeg_IK_CTRL
+    100580: LeftLeg_IK_CTRL_AnimData_CONST_GRP
+    100582: LeftLeg_IK_CTRL_Follow_Foot_GRP
+    100584: LeftLeg_IK_CTRL_Follow_Knee_GRP
+    100586: LeftLeg_IK_CTRL_GuideCurve
+    100588: LeftLeg_IK_CTRL_GuideCurve_Cluster1Handle
+    100590: LeftLeg_IK_CTRL_GuideCurve_Cluster2Handle
+    100592: LeftLeg_IK_CTRL_In_Rig_CONST_GRP
+    100594: LeftLeg_IK_CTRL_parent_AnimData_CONST_GRP
+    100596: LeftLeg_IK_CTRL_parent_Global_POS_GRP
+    100598: LeftLeg_IK_CTRL_parent_POS_GRP
+    100600: LeftLeg_IK_CTRL_POS_GRP
+    100602: LeftShoulder_CTRL
+    100604: LeftShoulder_CTRL_AnimData_CONST_GRP
+    100606: LeftShoulder_CTRL_In_Rig_CONST_GRP
+    100608: LeftShoulder_CTRL_POS_GRP
+    100610: LeftToeBase_FK_CTRL
+    100612: LeftToeBase_FK_CTRL_AnimData_CONST_GRP
+    100614: LeftToeBase_FK_CTRL_In_Rig_CONST_GRP
+    100616: LeftToeBase_FK_CTRL_POS_GRP
+    100618: LeftUpLeg_FK_CTRL
+    100620: LeftUpLeg_FK_CTRL_AnimData_CONST_GRP
+    100622: LeftUpLeg_FK_CTRL_In_Rig_CONST_GRP
+    100624: LeftUpLeg_FK_CTRL_POS_GRP
+    100626: Misc_GRP
+    100628: MIXAMO_CHARACTER_Head_infoNode
+    100630: MIXAMO_CHARACTER_HeadTop_End_infoNode
+    100632: MIXAMO_CHARACTER_Hips_infoNode
+    100634: MIXAMO_CHARACTER_infoNode
+    100636: MIXAMO_CHARACTER_LeftArm_infoNode
+    100638: MIXAMO_CHARACTER_LeftEye_infoNode
+    100640: MIXAMO_CHARACTER_LeftFoot_infoNode
+    100642: MIXAMO_CHARACTER_LeftForeArm_infoNode
+    100644: MIXAMO_CHARACTER_LeftHand_infoNode
+    100646: MIXAMO_CHARACTER_LeftHandIndex1_infoNode
+    100648: MIXAMO_CHARACTER_LeftHandIndex2_infoNode
+    100650: MIXAMO_CHARACTER_LeftHandIndex3_infoNode
+    100652: MIXAMO_CHARACTER_LeftHandIndex4_infoNode
+    100654: MIXAMO_CHARACTER_LeftHandMiddle1_infoNode
+    100656: MIXAMO_CHARACTER_LeftHandMiddle2_infoNode
+    100658: MIXAMO_CHARACTER_LeftHandMiddle3_infoNode
+    100660: MIXAMO_CHARACTER_LeftHandMiddle4_infoNode
+    100662: MIXAMO_CHARACTER_LeftHandPinky1_infoNode
+    100664: MIXAMO_CHARACTER_LeftHandPinky2_infoNode
+    100666: MIXAMO_CHARACTER_LeftHandPinky3_infoNode
+    100668: MIXAMO_CHARACTER_LeftHandPinky4_infoNode
+    100670: MIXAMO_CHARACTER_LeftHandRing1_infoNode
+    100672: MIXAMO_CHARACTER_LeftHandRing2_infoNode
+    100674: MIXAMO_CHARACTER_LeftHandRing3_infoNode
+    100676: MIXAMO_CHARACTER_LeftHandRing4_infoNode
+    100678: MIXAMO_CHARACTER_LeftHandThumb1_infoNode
+    100680: MIXAMO_CHARACTER_LeftHandThumb2_infoNode
+    100682: MIXAMO_CHARACTER_LeftHandThumb3_infoNode
+    100684: MIXAMO_CHARACTER_LeftHandThumb4_infoNode
+    100686: MIXAMO_CHARACTER_LeftLeg_infoNode
+    100688: MIXAMO_CHARACTER_LeftShoulder_infoNode
+    100690: MIXAMO_CHARACTER_LeftToe_End_infoNode
+    100692: MIXAMO_CHARACTER_LeftToeBase_infoNode
+    100694: MIXAMO_CHARACTER_LeftUpLeg_infoNode
+    100696: MIXAMO_CHARACTER_Neck1_infoNode
+    100698: MIXAMO_CHARACTER_Neck_infoNode
+    100700: MIXAMO_CHARACTER_RightArm_infoNode
+    100702: MIXAMO_CHARACTER_RightEye_infoNode
+    100704: MIXAMO_CHARACTER_RightFoot_infoNode
+    100706: MIXAMO_CHARACTER_RightForeArm_infoNode
+    100708: MIXAMO_CHARACTER_RightHand_infoNode
+    100710: MIXAMO_CHARACTER_RightHandIndex1_infoNode
+    100712: MIXAMO_CHARACTER_RightHandIndex2_infoNode
+    100714: MIXAMO_CHARACTER_RightHandIndex3_infoNode
+    100716: MIXAMO_CHARACTER_RightHandIndex4_infoNode
+    100718: MIXAMO_CHARACTER_RightHandMiddle1_infoNode
+    100720: MIXAMO_CHARACTER_RightHandMiddle2_infoNode
+    100722: MIXAMO_CHARACTER_RightHandMiddle3_infoNode
+    100724: MIXAMO_CHARACTER_RightHandMiddle4_infoNode
+    100726: MIXAMO_CHARACTER_RightHandPinky1_infoNode
+    100728: MIXAMO_CHARACTER_RightHandPinky2_infoNode
+    100730: MIXAMO_CHARACTER_RightHandPinky3_infoNode
+    100732: MIXAMO_CHARACTER_RightHandPinky4_infoNode
+    100734: MIXAMO_CHARACTER_RightHandRing1_infoNode
+    100736: MIXAMO_CHARACTER_RightHandRing2_infoNode
+    100738: MIXAMO_CHARACTER_RightHandRing3_infoNode
+    100740: MIXAMO_CHARACTER_RightHandRing4_infoNode
+    100742: MIXAMO_CHARACTER_RightHandThumb1_infoNode
+    100744: MIXAMO_CHARACTER_RightHandThumb2_infoNode
+    100746: MIXAMO_CHARACTER_RightHandThumb3_infoNode
+    100748: MIXAMO_CHARACTER_RightHandThumb4_infoNode
+    100750: MIXAMO_CHARACTER_RightLeg_infoNode
+    100752: MIXAMO_CHARACTER_RightShoulder_infoNode
+    100754: MIXAMO_CHARACTER_RightToe_End_infoNode
+    100756: MIXAMO_CHARACTER_RightToeBase_infoNode
+    100758: MIXAMO_CHARACTER_RightUpLeg_infoNode
+    100760: MIXAMO_CHARACTER_Root_infoNode
+    100762: MIXAMO_CHARACTER_Spine1_infoNode
+    100764: MIXAMO_CHARACTER_Spine2_infoNode
+    100766: MIXAMO_CHARACTER_Spine3_infoNode
+    100768: MIXAMO_CHARACTER_Spine_infoNode
+    100770: Neck_CTRL
+    100772: Neck_CTRL_AnimData_CONST_GRP
+    100774: Neck_CTRL_In_Rig_CONST_GRP
+    100776: Neck_CTRL_POS_GRP
+    100778: Pelvis_CTRL
+    100780: Pelvis_CTRL_AnimData_CONST_GRP
+    100782: Pelvis_CTRL_In_Rig_CONST_GRP
+    100784: Pelvis_CTRL_POS_GRP
+    100786: Right_Ankle_IK_AnimData_GRP
+    100788: Right_Ankle_IK_CTRL
+    100790: Right_Toe_End_IK_CTRL
+    100792: Right_Toe_IK_AnimData_GRP
+    100794: Right_ToeBase_IK_AnimData_GRP
+    100796: Right_ToeBase_IK_CTRL
+    100798: Right_ToeBase_IkHandle
+    100800: RightArm_FK_CTRL
+    100802: RightArm_FK_CTRL_AnimData_CONST_GRP
+    100804: RightArm_FK_CTRL_In_Rig_CONST_GRP
+    100806: RightArm_FK_CTRL_POS_GRP
+    100808: RightFoot_FK_CTRL
+    100810: RightFoot_FK_CTRL_AnimData_CONST_GRP
+    100812: RightFoot_FK_CTRL_In_Rig_CONST_GRP
+    100814: RightFoot_FK_CTRL_POS_GRP
+    100816: RightFoot_IK_BakingLOC
+    100818: RightFoot_IK_CTRL
+    100820: RightFoot_IK_CTRL_AnimData_CONST_GRP
+    100822: RightFoot_IK_CTRL_grandparent_AnimData_CONST_GRP
+    100824: RightFoot_IK_CTRL_grandparent_Global_POS_GRP
+    100826: RightFoot_IK_CTRL_grandparent_inRig_CONST_GRP
+    100828: RightFoot_IK_CTRL_grandparent_POS_GRP
+    100830: RightFoot_IK_CTRL_In_Rig_CONST_GRP
+    100832: RightFoot_IK_CTRL_parent_AnimData_CONST_GRP
+    100834: RightFoot_IK_CTRL_parent_Global_POS_GRP
+    100836: RightFoot_IK_CTRL_parent_POS_GRP
+    100838: RightFoot_IK_CTRL_POS_GRP
+    100840: RightFoot_IK_CTRL_Reorient_GRP
+    100842: RightFoot_IK_Handle
+    100844: RightFoot_Options
+    100846: RightForeArm_FK_CTRL
+    100848: RightForeArm_FK_CTRL_AnimData_CONST_GRP
+    100850: RightForeArm_FK_CTRL_In_Rig_CONST_GRP
+    100852: RightForeArm_FK_CTRL_POS_GRP
+    100854: RightForeArm_IK_BakingLOC
+    100856: RightForeArm_IK_CTRL
+    100858: RightForeArm_IK_CTRL_AnimData_CONST_GRP
+    100860: RightForeArm_IK_CTRL_GuideCurve
+    100862: RightForeArm_IK_CTRL_GuideCurve_Cluster1Handle
+    100864: RightForeArm_IK_CTRL_GuideCurve_Cluster2Handle
+    100866: RightForeArm_IK_CTRL_In_Rig_CONST_GRP
+    100868: RightForeArm_IK_CTRL_parent_AnimData_CONST_GRP
+    100870: RightForeArm_IK_CTRL_parent_Global_POS_GRP
+    100872: RightForeArm_IK_CTRL_parent_POS_GRP
+    100874: RightForeArm_IK_CTRL_POS_GRP
+    100876: RightHand_CTRLs_GRP
+    100878: RightHand_FK_CTRL
+    100880: RightHand_FK_CTRL_AnimData_CONST_GRP
+    100882: RightHand_FK_CTRL_In_Rig_CONST_GRP
+    100884: RightHand_FK_CTRL_POS_GRP
+    100886: RightHand_IK_CTRL
+    100888: RightHand_IK_CTRL_AnimData_CONST_GRP
+    100890: RightHand_IK_CTRL_grandparent_AnimData_CONST_GRP
+    100892: RightHand_IK_CTRL_grandparent_Global_POS_GRP
+    100894: RightHand_IK_CTRL_grandparent_inRig_CONST_GRP
+    100896: RightHand_IK_CTRL_grandparent_POS_GRP
+    100898: RightHand_IK_CTRL_In_Rig_CONST_GRP
+    100900: RightHand_IK_CTRL_parent_AnimData_CONST_GRP
+    100902: RightHand_IK_CTRL_parent_Global_POS_GRP
+    100904: RightHand_IK_CTRL_parent_POS_GRP
+    100906: RightHand_IK_CTRL_POS_GRP
+    100908: RightHand_IK_Handle
+    100910: RightHand_Options
+    100912: RightHandIndex1_CTRL
+    100914: RightHandIndex1_CTRL_AnimData_CONST_GRP
+    100916: RightHandIndex1_CTRL_In_Rig_CONST_GRP
+    100918: RightHandIndex1_CTRL_POS_GRP
+    100920: RightHandIndex2_CTRL
+    100922: RightHandIndex2_CTRL_AnimData_CONST_GRP
+    100924: RightHandIndex2_CTRL_In_Rig_CONST_GRP
+    100926: RightHandIndex2_CTRL_POS_GRP
+    100928: RightHandIndex3_CTRL
+    100930: RightHandIndex3_CTRL_AnimData_CONST_GRP
+    100932: RightHandIndex3_CTRL_In_Rig_CONST_GRP
+    100934: RightHandIndex3_CTRL_POS_GRP
+    100936: RightHandMiddle1_CTRL
+    100938: RightHandMiddle1_CTRL_AnimData_CONST_GRP
+    100940: RightHandMiddle1_CTRL_In_Rig_CONST_GRP
+    100942: RightHandMiddle1_CTRL_POS_GRP
+    100944: RightHandMiddle2_CTRL
+    100946: RightHandMiddle2_CTRL_AnimData_CONST_GRP
+    100948: RightHandMiddle2_CTRL_In_Rig_CONST_GRP
+    100950: RightHandMiddle2_CTRL_POS_GRP
+    100952: RightHandMiddle3_CTRL
+    100954: RightHandMiddle3_CTRL_AnimData_CONST_GRP
+    100956: RightHandMiddle3_CTRL_In_Rig_CONST_GRP
+    100958: RightHandMiddle3_CTRL_POS_GRP
+    100960: RightHandRing1_CTRL
+    100962: RightHandRing1_CTRL_AnimData_CONST_GRP
+    100964: RightHandRing1_CTRL_In_Rig_CONST_GRP
+    100966: RightHandRing1_CTRL_POS_GRP
+    100968: RightHandRing2_CTRL
+    100970: RightHandRing2_CTRL_AnimData_CONST_GRP
+    100972: RightHandRing2_CTRL_In_Rig_CONST_GRP
+    100974: RightHandRing2_CTRL_POS_GRP
+    100976: RightHandRing3_CTRL
+    100978: RightHandRing3_CTRL_AnimData_CONST_GRP
+    100980: RightHandRing3_CTRL_In_Rig_CONST_GRP
+    100982: RightHandRing3_CTRL_POS_GRP
+    100984: RightHandThumb1_CTRL
+    100986: RightHandThumb1_CTRL_AnimData_CONST_GRP
+    100988: RightHandThumb1_CTRL_In_Rig_CONST_GRP
+    100990: RightHandThumb1_CTRL_POS_GRP
+    100992: RightHandThumb2_CTRL
+    100994: RightHandThumb2_CTRL_AnimData_CONST_GRP
+    100996: RightHandThumb2_CTRL_In_Rig_CONST_GRP
+    100998: RightHandThumb2_CTRL_POS_GRP
+    101000: RightHandThumb3_CTRL
+    101002: RightHandThumb3_CTRL_AnimData_CONST_GRP
+    101004: RightHandThumb3_CTRL_In_Rig_CONST_GRP
+    101006: RightHandThumb3_CTRL_POS_GRP
+    101008: RightLeg_FK_CTRL
+    101010: RightLeg_FK_CTRL_AnimData_CONST_GRP
+    101012: RightLeg_FK_CTRL_In_Rig_CONST_GRP
+    101014: RightLeg_FK_CTRL_POS_GRP
+    101016: RightLeg_IK_BakingLOC
+    101018: RightLeg_IK_CTRL
+    101020: RightLeg_IK_CTRL_AnimData_CONST_GRP
+    101022: RightLeg_IK_CTRL_Follow_Foot_GRP
+    101024: RightLeg_IK_CTRL_Follow_Knee_GRP
+    101026: RightLeg_IK_CTRL_GuideCurve
+    101028: RightLeg_IK_CTRL_GuideCurve_Cluster1Handle
+    101030: RightLeg_IK_CTRL_GuideCurve_Cluster2Handle
+    101032: RightLeg_IK_CTRL_In_Rig_CONST_GRP
+    101034: RightLeg_IK_CTRL_parent_AnimData_CONST_GRP
+    101036: RightLeg_IK_CTRL_parent_Global_POS_GRP
+    101038: RightLeg_IK_CTRL_parent_POS_GRP
+    101040: RightLeg_IK_CTRL_POS_GRP
+    101042: RightShoulder_CTRL
+    101044: RightShoulder_CTRL_AnimData_CONST_GRP
+    101046: RightShoulder_CTRL_In_Rig_CONST_GRP
+    101048: RightShoulder_CTRL_POS_GRP
+    101050: RightToeBase_FK_CTRL
+    101052: RightToeBase_FK_CTRL_AnimData_CONST_GRP
+    101054: RightToeBase_FK_CTRL_In_Rig_CONST_GRP
+    101056: RightToeBase_FK_CTRL_POS_GRP
+    101058: RightUpLeg_FK_CTRL
+    101060: RightUpLeg_FK_CTRL_AnimData_CONST_GRP
+    101062: RightUpLeg_FK_CTRL_In_Rig_CONST_GRP
+    101064: RightUpLeg_FK_CTRL_POS_GRP
+    101066: Root_CTRL
+    101068: Root_CTRL_AnimData_CONST_GRP
+    101070: Root_CTRL_In_Rig_CONST_GRP
+    101072: Root_CTRL_POS_GRP
+    101074: Spine1_CTRL
+    101076: Spine1_CTRL_AnimData_CONST_GRP
+    101078: Spine1_CTRL_In_Rig_CONST_GRP
+    101080: Spine1_CTRL_POS_GRP
+    101082: Spine2_CTRL
+    101084: Spine2_CTRL_AnimData_CONST_GRP
+    101086: Spine2_CTRL_In_Rig_CONST_GRP
+    101088: Spine2_CTRL_POS_GRP
+    101090: Spine_CTRL
+    101092: Spine_CTRL_AnimData_CONST_GRP
+    101094: Spine_CTRL_In_Rig_CONST_GRP
+    101096: Spine_CTRL_POS_GRP
+    101098: transform2
+    101100: transform3
+    400000: Bind_Head
+    400002: Bind_Hips
+    400004: Bind_Joint_GRP
+    400006: Bind_LeftArm
+    400008: Bind_LeftFoot
+    400010: Bind_LeftForeArm
+    400012: Bind_LeftHand
+    400014: Bind_LeftHandIndex1
+    400016: Bind_LeftHandIndex2
+    400018: Bind_LeftHandIndex3
+    400020: Bind_LeftHandMiddle1
+    400022: Bind_LeftHandMiddle2
+    400024: Bind_LeftHandMiddle3
+    400026: Bind_LeftHandRing1
+    400028: Bind_LeftHandRing2
+    400030: Bind_LeftHandRing3
+    400032: Bind_LeftHandThumb1
+    400034: Bind_LeftHandThumb2
+    400036: Bind_LeftHandThumb3
+    400038: Bind_LeftLeg
+    400040: Bind_LeftShoulder
+    400042: Bind_LeftToeBase
+    400044: Bind_LeftUpLeg
+    400046: Bind_Neck
+    400048: Bind_RightArm
+    400050: Bind_RightFoot
+    400052: Bind_RightForeArm
+    400054: Bind_RightHand
+    400056: Bind_RightHandIndex1
+    400058: Bind_RightHandIndex2
+    400060: Bind_RightHandIndex3
+    400062: Bind_RightHandMiddle1
+    400064: Bind_RightHandMiddle2
+    400066: Bind_RightHandMiddle3
+    400068: Bind_RightHandRing1
+    400070: Bind_RightHandRing2
+    400072: Bind_RightHandRing3
+    400074: Bind_RightHandThumb1
+    400076: Bind_RightHandThumb2
+    400078: Bind_RightHandThumb3
+    400080: Bind_RightLeg
+    400082: Bind_RightShoulder
+    400084: Bind_RightToeBase
+    400086: Bind_RightUpLeg
+    400088: Bind_Root
+    400090: Bind_Spine
+    400092: Bind_Spine1
+    400094: Bind_Spine2
+    400096: //RootNode
+    400098: Joint_GRP
+    400100: Katana1
+    400102: Katana_Left
+    400104: Mesh_GRP
+    400106: Mesh_Object001
+    400108: transform1
+    400110: AnimData_Head
+    400112: AnimData_HeadTop_End
+    400114: AnimData_Hips
+    400116: AnimData_Joint_GRP
+    400118: AnimData_LeftArm
+    400120: AnimData_LeftFoot
+    400122: AnimData_LeftForeArm
+    400124: AnimData_LeftHand
+    400126: AnimData_LeftHandIndex1
+    400128: AnimData_LeftHandIndex2
+    400130: AnimData_LeftHandIndex3
+    400132: AnimData_LeftHandIndex4
+    400134: AnimData_LeftHandMiddle1
+    400136: AnimData_LeftHandMiddle2
+    400138: AnimData_LeftHandMiddle3
+    400140: AnimData_LeftHandMiddle4
+    400142: AnimData_LeftHandRing1
+    400144: AnimData_LeftHandRing2
+    400146: AnimData_LeftHandRing3
+    400148: AnimData_LeftHandRing4
+    400150: AnimData_LeftHandThumb1
+    400152: AnimData_LeftHandThumb2
+    400154: AnimData_LeftHandThumb3
+    400156: AnimData_LeftHandThumb4
+    400158: AnimData_LeftLeg
+    400160: AnimData_LeftShoulder
+    400162: AnimData_LeftToe_End
+    400164: AnimData_LeftToeBase
+    400166: AnimData_LeftUpLeg
+    400168: AnimData_Neck
+    400170: AnimData_RightArm
+    400172: AnimData_RightFoot
+    400174: AnimData_RightForeArm
+    400176: AnimData_RightHand
+    400178: AnimData_RightHandIndex1
+    400180: AnimData_RightHandIndex2
+    400182: AnimData_RightHandIndex3
+    400184: AnimData_RightHandIndex4
+    400186: AnimData_RightHandMiddle1
+    400188: AnimData_RightHandMiddle2
+    400190: AnimData_RightHandMiddle3
+    400192: AnimData_RightHandMiddle4
+    400194: AnimData_RightHandRing1
+    400196: AnimData_RightHandRing2
+    400198: AnimData_RightHandRing3
+    400200: AnimData_RightHandRing4
+    400202: AnimData_RightHandThumb1
+    400204: AnimData_RightHandThumb2
+    400206: AnimData_RightHandThumb3
+    400208: AnimData_RightHandThumb4
+    400210: AnimData_RightLeg
+    400212: AnimData_RightShoulder
+    400214: AnimData_RightToe_End
+    400216: AnimData_RightToeBase
+    400218: AnimData_RightUpLeg
+    400220: AnimData_Root
+    400222: AnimData_Spine
+    400224: AnimData_Spine1
+    400226: AnimData_Spine2
+    400228: Bind_HeadTop_End
+    400230: Bind_LeftHandIndex4
+    400232: Bind_LeftHandMiddle4
+    400234: Bind_LeftHandRing4
+    400236: Bind_LeftHandThumb4
+    400238: Bind_LeftToe_End
+    400240: Bind_RightHandIndex4
+    400242: Bind_RightHandMiddle4
+    400244: Bind_RightHandRing4
+    400246: Bind_RightHandThumb4
+    400248: Bind_RightToe_End
+    400250: CTRL_GRP
+    400252: FK_LeftArm
+    400254: FK_LeftFoot
+    400256: FK_LeftForeArm
+    400258: FK_LeftHand
+    400260: FK_LeftLeg
+    400262: FK_LeftToe_End
+    400264: FK_LeftToeBase
+    400266: FK_LeftUpLeg
+    400268: FK_RightArm
+    400270: FK_RightFoot
+    400272: FK_RightForeArm
+    400274: FK_RightHand
+    400276: FK_RightLeg
+    400278: FK_RightToe_End
+    400280: FK_RightToeBase
+    400282: FK_RightUpLeg
+    400284: global_CTRL
+    400286: Head_CTRL
+    400288: Head_CTRL_AnimData_CONST_GRP
+    400290: Head_CTRL_In_Rig_CONST_GRP
+    400292: Head_CTRL_Inherit_Rotation_GRP
+    400294: Head_CTRL_POS_GRP
+    400296: IK_Dummy_Hips
+    400298: IK_Dummy_Joint_GRP
+    400300: IK_Dummy_LeftShoulder
+    400302: IK_Dummy_RightShoulder
+    400304: IK_Dummy_Root
+    400306: IK_Dummy_Spine
+    400308: IK_Dummy_Spine1
+    400310: IK_Dummy_Spine2
+    400312: IK_LeftArm
+    400314: IK_LeftFoot
+    400316: IK_LeftForeArm
+    400318: IK_LeftHand
+    400320: IK_LeftLeg
+    400322: IK_LeftToe_End
+    400324: IK_LeftToeBase
+    400326: IK_LeftUpLeg
+    400328: IK_RightArm
+    400330: IK_RightFoot
+    400332: IK_RightForeArm
+    400334: IK_RightHand
+    400336: IK_RightLeg
+    400338: IK_RightToe_End
+    400340: IK_RightToeBase
+    400342: IK_RightUpLeg
+    400344: joint1
+    400346: Left_Ankle_IK_AnimData_GRP
+    400348: Left_Ankle_IK_CTRL
+    400350: Left_Toe_End_IK_CTRL
+    400352: Left_Toe_IK_AnimData_GRP
+    400354: Left_ToeBase_IK_AnimData_GRP
+    400356: Left_ToeBase_IK_CTRL
+    400358: Left_ToeBase_IkHandle
+    400360: LeftArm_FK_CTRL
+    400362: LeftArm_FK_CTRL_AnimData_CONST_GRP
+    400364: LeftArm_FK_CTRL_In_Rig_CONST_GRP
+    400366: LeftArm_FK_CTRL_POS_GRP
+    400368: LeftFoot_FK_CTRL
+    400370: LeftFoot_FK_CTRL_AnimData_CONST_GRP
+    400372: LeftFoot_FK_CTRL_In_Rig_CONST_GRP
+    400374: LeftFoot_FK_CTRL_POS_GRP
+    400376: LeftFoot_IK_BakingLOC
+    400378: LeftFoot_IK_CTRL
+    400380: LeftFoot_IK_CTRL_AnimData_CONST_GRP
+    400382: LeftFoot_IK_CTRL_grandparent_AnimData_CONST_GRP
+    400384: LeftFoot_IK_CTRL_grandparent_Global_POS_GRP
+    400386: LeftFoot_IK_CTRL_grandparent_inRig_CONST_GRP
+    400388: LeftFoot_IK_CTRL_grandparent_POS_GRP
+    400390: LeftFoot_IK_CTRL_In_Rig_CONST_GRP
+    400392: LeftFoot_IK_CTRL_parent_AnimData_CONST_GRP
+    400394: LeftFoot_IK_CTRL_parent_Global_POS_GRP
+    400396: LeftFoot_IK_CTRL_parent_POS_GRP
+    400398: LeftFoot_IK_CTRL_POS_GRP
+    400400: LeftFoot_IK_CTRL_Reorient_GRP
+    400402: LeftFoot_IK_Handle
+    400404: LeftFoot_Options
+    400406: LeftForeArm_FK_CTRL
+    400408: LeftForeArm_FK_CTRL_AnimData_CONST_GRP
+    400410: LeftForeArm_FK_CTRL_In_Rig_CONST_GRP
+    400412: LeftForeArm_FK_CTRL_POS_GRP
+    400414: LeftForeArm_IK_BakingLOC
+    400416: LeftForeArm_IK_CTRL
+    400418: LeftForeArm_IK_CTRL_AnimData_CONST_GRP
+    400420: LeftForeArm_IK_CTRL_GuideCurve
+    400422: LeftForeArm_IK_CTRL_GuideCurve_Cluster1Handle
+    400424: LeftForeArm_IK_CTRL_GuideCurve_Cluster2Handle
+    400426: LeftForeArm_IK_CTRL_In_Rig_CONST_GRP
+    400428: LeftForeArm_IK_CTRL_parent_AnimData_CONST_GRP
+    400430: LeftForeArm_IK_CTRL_parent_Global_POS_GRP
+    400432: LeftForeArm_IK_CTRL_parent_POS_GRP
+    400434: LeftForeArm_IK_CTRL_POS_GRP
+    400436: LeftHand_CTRLs_GRP
+    400438: LeftHand_FK_CTRL
+    400440: LeftHand_FK_CTRL_AnimData_CONST_GRP
+    400442: LeftHand_FK_CTRL_In_Rig_CONST_GRP
+    400444: LeftHand_FK_CTRL_POS_GRP
+    400446: LeftHand_IK_CTRL
+    400448: LeftHand_IK_CTRL_AnimData_CONST_GRP
+    400450: LeftHand_IK_CTRL_grandparent_AnimData_CONST_GRP
+    400452: LeftHand_IK_CTRL_grandparent_Global_POS_GRP
+    400454: LeftHand_IK_CTRL_grandparent_inRig_CONST_GRP
+    400456: LeftHand_IK_CTRL_grandparent_POS_GRP
+    400458: LeftHand_IK_CTRL_In_Rig_CONST_GRP
+    400460: LeftHand_IK_CTRL_parent_AnimData_CONST_GRP
+    400462: LeftHand_IK_CTRL_parent_Global_POS_GRP
+    400464: LeftHand_IK_CTRL_parent_POS_GRP
+    400466: LeftHand_IK_CTRL_POS_GRP
+    400468: LeftHand_IK_Handle
+    400470: LeftHand_Options
+    400472: LeftHandIndex1_CTRL
+    400474: LeftHandIndex1_CTRL_AnimData_CONST_GRP
+    400476: LeftHandIndex1_CTRL_In_Rig_CONST_GRP
+    400478: LeftHandIndex1_CTRL_POS_GRP
+    400480: LeftHandIndex2_CTRL
+    400482: LeftHandIndex2_CTRL_AnimData_CONST_GRP
+    400484: LeftHandIndex2_CTRL_In_Rig_CONST_GRP
+    400486: LeftHandIndex2_CTRL_POS_GRP
+    400488: LeftHandIndex3_CTRL
+    400490: LeftHandIndex3_CTRL_AnimData_CONST_GRP
+    400492: LeftHandIndex3_CTRL_In_Rig_CONST_GRP
+    400494: LeftHandIndex3_CTRL_POS_GRP
+    400496: LeftHandMiddle1_CTRL
+    400498: LeftHandMiddle1_CTRL_AnimData_CONST_GRP
+    400500: LeftHandMiddle1_CTRL_In_Rig_CONST_GRP
+    400502: LeftHandMiddle1_CTRL_POS_GRP
+    400504: LeftHandMiddle2_CTRL
+    400506: LeftHandMiddle2_CTRL_AnimData_CONST_GRP
+    400508: LeftHandMiddle2_CTRL_In_Rig_CONST_GRP
+    400510: LeftHandMiddle2_CTRL_POS_GRP
+    400512: LeftHandMiddle3_CTRL
+    400514: LeftHandMiddle3_CTRL_AnimData_CONST_GRP
+    400516: LeftHandMiddle3_CTRL_In_Rig_CONST_GRP
+    400518: LeftHandMiddle3_CTRL_POS_GRP
+    400520: LeftHandRing1_CTRL
+    400522: LeftHandRing1_CTRL_AnimData_CONST_GRP
+    400524: LeftHandRing1_CTRL_In_Rig_CONST_GRP
+    400526: LeftHandRing1_CTRL_POS_GRP
+    400528: LeftHandRing2_CTRL
+    400530: LeftHandRing2_CTRL_AnimData_CONST_GRP
+    400532: LeftHandRing2_CTRL_In_Rig_CONST_GRP
+    400534: LeftHandRing2_CTRL_POS_GRP
+    400536: LeftHandRing3_CTRL
+    400538: LeftHandRing3_CTRL_AnimData_CONST_GRP
+    400540: LeftHandRing3_CTRL_In_Rig_CONST_GRP
+    400542: LeftHandRing3_CTRL_POS_GRP
+    400544: LeftHandThumb1_CTRL
+    400546: LeftHandThumb1_CTRL_AnimData_CONST_GRP
+    400548: LeftHandThumb1_CTRL_In_Rig_CONST_GRP
+    400550: LeftHandThumb1_CTRL_POS_GRP
+    400552: LeftHandThumb2_CTRL
+    400554: LeftHandThumb2_CTRL_AnimData_CONST_GRP
+    400556: LeftHandThumb2_CTRL_In_Rig_CONST_GRP
+    400558: LeftHandThumb2_CTRL_POS_GRP
+    400560: LeftHandThumb3_CTRL
+    400562: LeftHandThumb3_CTRL_AnimData_CONST_GRP
+    400564: LeftHandThumb3_CTRL_In_Rig_CONST_GRP
+    400566: LeftHandThumb3_CTRL_POS_GRP
+    400568: LeftLeg_FK_CTRL
+    400570: LeftLeg_FK_CTRL_AnimData_CONST_GRP
+    400572: LeftLeg_FK_CTRL_In_Rig_CONST_GRP
+    400574: LeftLeg_FK_CTRL_POS_GRP
+    400576: LeftLeg_IK_BakingLOC
+    400578: LeftLeg_IK_CTRL
+    400580: LeftLeg_IK_CTRL_AnimData_CONST_GRP
+    400582: LeftLeg_IK_CTRL_Follow_Foot_GRP
+    400584: LeftLeg_IK_CTRL_Follow_Knee_GRP
+    400586: LeftLeg_IK_CTRL_GuideCurve
+    400588: LeftLeg_IK_CTRL_GuideCurve_Cluster1Handle
+    400590: LeftLeg_IK_CTRL_GuideCurve_Cluster2Handle
+    400592: LeftLeg_IK_CTRL_In_Rig_CONST_GRP
+    400594: LeftLeg_IK_CTRL_parent_AnimData_CONST_GRP
+    400596: LeftLeg_IK_CTRL_parent_Global_POS_GRP
+    400598: LeftLeg_IK_CTRL_parent_POS_GRP
+    400600: LeftLeg_IK_CTRL_POS_GRP
+    400602: LeftShoulder_CTRL
+    400604: LeftShoulder_CTRL_AnimData_CONST_GRP
+    400606: LeftShoulder_CTRL_In_Rig_CONST_GRP
+    400608: LeftShoulder_CTRL_POS_GRP
+    400610: LeftToeBase_FK_CTRL
+    400612: LeftToeBase_FK_CTRL_AnimData_CONST_GRP
+    400614: LeftToeBase_FK_CTRL_In_Rig_CONST_GRP
+    400616: LeftToeBase_FK_CTRL_POS_GRP
+    400618: LeftUpLeg_FK_CTRL
+    400620: LeftUpLeg_FK_CTRL_AnimData_CONST_GRP
+    400622: LeftUpLeg_FK_CTRL_In_Rig_CONST_GRP
+    400624: LeftUpLeg_FK_CTRL_POS_GRP
+    400626: Misc_GRP
+    400628: MIXAMO_CHARACTER_Head_infoNode
+    400630: MIXAMO_CHARACTER_HeadTop_End_infoNode
+    400632: MIXAMO_CHARACTER_Hips_infoNode
+    400634: MIXAMO_CHARACTER_infoNode
+    400636: MIXAMO_CHARACTER_LeftArm_infoNode
+    400638: MIXAMO_CHARACTER_LeftEye_infoNode
+    400640: MIXAMO_CHARACTER_LeftFoot_infoNode
+    400642: MIXAMO_CHARACTER_LeftForeArm_infoNode
+    400644: MIXAMO_CHARACTER_LeftHand_infoNode
+    400646: MIXAMO_CHARACTER_LeftHandIndex1_infoNode
+    400648: MIXAMO_CHARACTER_LeftHandIndex2_infoNode
+    400650: MIXAMO_CHARACTER_LeftHandIndex3_infoNode
+    400652: MIXAMO_CHARACTER_LeftHandIndex4_infoNode
+    400654: MIXAMO_CHARACTER_LeftHandMiddle1_infoNode
+    400656: MIXAMO_CHARACTER_LeftHandMiddle2_infoNode
+    400658: MIXAMO_CHARACTER_LeftHandMiddle3_infoNode
+    400660: MIXAMO_CHARACTER_LeftHandMiddle4_infoNode
+    400662: MIXAMO_CHARACTER_LeftHandPinky1_infoNode
+    400664: MIXAMO_CHARACTER_LeftHandPinky2_infoNode
+    400666: MIXAMO_CHARACTER_LeftHandPinky3_infoNode
+    400668: MIXAMO_CHARACTER_LeftHandPinky4_infoNode
+    400670: MIXAMO_CHARACTER_LeftHandRing1_infoNode
+    400672: MIXAMO_CHARACTER_LeftHandRing2_infoNode
+    400674: MIXAMO_CHARACTER_LeftHandRing3_infoNode
+    400676: MIXAMO_CHARACTER_LeftHandRing4_infoNode
+    400678: MIXAMO_CHARACTER_LeftHandThumb1_infoNode
+    400680: MIXAMO_CHARACTER_LeftHandThumb2_infoNode
+    400682: MIXAMO_CHARACTER_LeftHandThumb3_infoNode
+    400684: MIXAMO_CHARACTER_LeftHandThumb4_infoNode
+    400686: MIXAMO_CHARACTER_LeftLeg_infoNode
+    400688: MIXAMO_CHARACTER_LeftShoulder_infoNode
+    400690: MIXAMO_CHARACTER_LeftToe_End_infoNode
+    400692: MIXAMO_CHARACTER_LeftToeBase_infoNode
+    400694: MIXAMO_CHARACTER_LeftUpLeg_infoNode
+    400696: MIXAMO_CHARACTER_Neck1_infoNode
+    400698: MIXAMO_CHARACTER_Neck_infoNode
+    400700: MIXAMO_CHARACTER_RightArm_infoNode
+    400702: MIXAMO_CHARACTER_RightEye_infoNode
+    400704: MIXAMO_CHARACTER_RightFoot_infoNode
+    400706: MIXAMO_CHARACTER_RightForeArm_infoNode
+    400708: MIXAMO_CHARACTER_RightHand_infoNode
+    400710: MIXAMO_CHARACTER_RightHandIndex1_infoNode
+    400712: MIXAMO_CHARACTER_RightHandIndex2_infoNode
+    400714: MIXAMO_CHARACTER_RightHandIndex3_infoNode
+    400716: MIXAMO_CHARACTER_RightHandIndex4_infoNode
+    400718: MIXAMO_CHARACTER_RightHandMiddle1_infoNode
+    400720: MIXAMO_CHARACTER_RightHandMiddle2_infoNode
+    400722: MIXAMO_CHARACTER_RightHandMiddle3_infoNode
+    400724: MIXAMO_CHARACTER_RightHandMiddle4_infoNode
+    400726: MIXAMO_CHARACTER_RightHandPinky1_infoNode
+    400728: MIXAMO_CHARACTER_RightHandPinky2_infoNode
+    400730: MIXAMO_CHARACTER_RightHandPinky3_infoNode
+    400732: MIXAMO_CHARACTER_RightHandPinky4_infoNode
+    400734: MIXAMO_CHARACTER_RightHandRing1_infoNode
+    400736: MIXAMO_CHARACTER_RightHandRing2_infoNode
+    400738: MIXAMO_CHARACTER_RightHandRing3_infoNode
+    400740: MIXAMO_CHARACTER_RightHandRing4_infoNode
+    400742: MIXAMO_CHARACTER_RightHandThumb1_infoNode
+    400744: MIXAMO_CHARACTER_RightHandThumb2_infoNode
+    400746: MIXAMO_CHARACTER_RightHandThumb3_infoNode
+    400748: MIXAMO_CHARACTER_RightHandThumb4_infoNode
+    400750: MIXAMO_CHARACTER_RightLeg_infoNode
+    400752: MIXAMO_CHARACTER_RightShoulder_infoNode
+    400754: MIXAMO_CHARACTER_RightToe_End_infoNode
+    400756: MIXAMO_CHARACTER_RightToeBase_infoNode
+    400758: MIXAMO_CHARACTER_RightUpLeg_infoNode
+    400760: MIXAMO_CHARACTER_Root_infoNode
+    400762: MIXAMO_CHARACTER_Spine1_infoNode
+    400764: MIXAMO_CHARACTER_Spine2_infoNode
+    400766: MIXAMO_CHARACTER_Spine3_infoNode
+    400768: MIXAMO_CHARACTER_Spine_infoNode
+    400770: Neck_CTRL
+    400772: Neck_CTRL_AnimData_CONST_GRP
+    400774: Neck_CTRL_In_Rig_CONST_GRP
+    400776: Neck_CTRL_POS_GRP
+    400778: Pelvis_CTRL
+    400780: Pelvis_CTRL_AnimData_CONST_GRP
+    400782: Pelvis_CTRL_In_Rig_CONST_GRP
+    400784: Pelvis_CTRL_POS_GRP
+    400786: Right_Ankle_IK_AnimData_GRP
+    400788: Right_Ankle_IK_CTRL
+    400790: Right_Toe_End_IK_CTRL
+    400792: Right_Toe_IK_AnimData_GRP
+    400794: Right_ToeBase_IK_AnimData_GRP
+    400796: Right_ToeBase_IK_CTRL
+    400798: Right_ToeBase_IkHandle
+    400800: RightArm_FK_CTRL
+    400802: RightArm_FK_CTRL_AnimData_CONST_GRP
+    400804: RightArm_FK_CTRL_In_Rig_CONST_GRP
+    400806: RightArm_FK_CTRL_POS_GRP
+    400808: RightFoot_FK_CTRL
+    400810: RightFoot_FK_CTRL_AnimData_CONST_GRP
+    400812: RightFoot_FK_CTRL_In_Rig_CONST_GRP
+    400814: RightFoot_FK_CTRL_POS_GRP
+    400816: RightFoot_IK_BakingLOC
+    400818: RightFoot_IK_CTRL
+    400820: RightFoot_IK_CTRL_AnimData_CONST_GRP
+    400822: RightFoot_IK_CTRL_grandparent_AnimData_CONST_GRP
+    400824: RightFoot_IK_CTRL_grandparent_Global_POS_GRP
+    400826: RightFoot_IK_CTRL_grandparent_inRig_CONST_GRP
+    400828: RightFoot_IK_CTRL_grandparent_POS_GRP
+    400830: RightFoot_IK_CTRL_In_Rig_CONST_GRP
+    400832: RightFoot_IK_CTRL_parent_AnimData_CONST_GRP
+    400834: RightFoot_IK_CTRL_parent_Global_POS_GRP
+    400836: RightFoot_IK_CTRL_parent_POS_GRP
+    400838: RightFoot_IK_CTRL_POS_GRP
+    400840: RightFoot_IK_CTRL_Reorient_GRP
+    400842: RightFoot_IK_Handle
+    400844: RightFoot_Options
+    400846: RightForeArm_FK_CTRL
+    400848: RightForeArm_FK_CTRL_AnimData_CONST_GRP
+    400850: RightForeArm_FK_CTRL_In_Rig_CONST_GRP
+    400852: RightForeArm_FK_CTRL_POS_GRP
+    400854: RightForeArm_IK_BakingLOC
+    400856: RightForeArm_IK_CTRL
+    400858: RightForeArm_IK_CTRL_AnimData_CONST_GRP
+    400860: RightForeArm_IK_CTRL_GuideCurve
+    400862: RightForeArm_IK_CTRL_GuideCurve_Cluster1Handle
+    400864: RightForeArm_IK_CTRL_GuideCurve_Cluster2Handle
+    400866: RightForeArm_IK_CTRL_In_Rig_CONST_GRP
+    400868: RightForeArm_IK_CTRL_parent_AnimData_CONST_GRP
+    400870: RightForeArm_IK_CTRL_parent_Global_POS_GRP
+    400872: RightForeArm_IK_CTRL_parent_POS_GRP
+    400874: RightForeArm_IK_CTRL_POS_GRP
+    400876: RightHand_CTRLs_GRP
+    400878: RightHand_FK_CTRL
+    400880: RightHand_FK_CTRL_AnimData_CONST_GRP
+    400882: RightHand_FK_CTRL_In_Rig_CONST_GRP
+    400884: RightHand_FK_CTRL_POS_GRP
+    400886: RightHand_IK_CTRL
+    400888: RightHand_IK_CTRL_AnimData_CONST_GRP
+    400890: RightHand_IK_CTRL_grandparent_AnimData_CONST_GRP
+    400892: RightHand_IK_CTRL_grandparent_Global_POS_GRP
+    400894: RightHand_IK_CTRL_grandparent_inRig_CONST_GRP
+    400896: RightHand_IK_CTRL_grandparent_POS_GRP
+    400898: RightHand_IK_CTRL_In_Rig_CONST_GRP
+    400900: RightHand_IK_CTRL_parent_AnimData_CONST_GRP
+    400902: RightHand_IK_CTRL_parent_Global_POS_GRP
+    400904: RightHand_IK_CTRL_parent_POS_GRP
+    400906: RightHand_IK_CTRL_POS_GRP
+    400908: RightHand_IK_Handle
+    400910: RightHand_Options
+    400912: RightHandIndex1_CTRL
+    400914: RightHandIndex1_CTRL_AnimData_CONST_GRP
+    400916: RightHandIndex1_CTRL_In_Rig_CONST_GRP
+    400918: RightHandIndex1_CTRL_POS_GRP
+    400920: RightHandIndex2_CTRL
+    400922: RightHandIndex2_CTRL_AnimData_CONST_GRP
+    400924: RightHandIndex2_CTRL_In_Rig_CONST_GRP
+    400926: RightHandIndex2_CTRL_POS_GRP
+    400928: RightHandIndex3_CTRL
+    400930: RightHandIndex3_CTRL_AnimData_CONST_GRP
+    400932: RightHandIndex3_CTRL_In_Rig_CONST_GRP
+    400934: RightHandIndex3_CTRL_POS_GRP
+    400936: RightHandMiddle1_CTRL
+    400938: RightHandMiddle1_CTRL_AnimData_CONST_GRP
+    400940: RightHandMiddle1_CTRL_In_Rig_CONST_GRP
+    400942: RightHandMiddle1_CTRL_POS_GRP
+    400944: RightHandMiddle2_CTRL
+    400946: RightHandMiddle2_CTRL_AnimData_CONST_GRP
+    400948: RightHandMiddle2_CTRL_In_Rig_CONST_GRP
+    400950: RightHandMiddle2_CTRL_POS_GRP
+    400952: RightHandMiddle3_CTRL
+    400954: RightHandMiddle3_CTRL_AnimData_CONST_GRP
+    400956: RightHandMiddle3_CTRL_In_Rig_CONST_GRP
+    400958: RightHandMiddle3_CTRL_POS_GRP
+    400960: RightHandRing1_CTRL
+    400962: RightHandRing1_CTRL_AnimData_CONST_GRP
+    400964: RightHandRing1_CTRL_In_Rig_CONST_GRP
+    400966: RightHandRing1_CTRL_POS_GRP
+    400968: RightHandRing2_CTRL
+    400970: RightHandRing2_CTRL_AnimData_CONST_GRP
+    400972: RightHandRing2_CTRL_In_Rig_CONST_GRP
+    400974: RightHandRing2_CTRL_POS_GRP
+    400976: RightHandRing3_CTRL
+    400978: RightHandRing3_CTRL_AnimData_CONST_GRP
+    400980: RightHandRing3_CTRL_In_Rig_CONST_GRP
+    400982: RightHandRing3_CTRL_POS_GRP
+    400984: RightHandThumb1_CTRL
+    400986: RightHandThumb1_CTRL_AnimData_CONST_GRP
+    400988: RightHandThumb1_CTRL_In_Rig_CONST_GRP
+    400990: RightHandThumb1_CTRL_POS_GRP
+    400992: RightHandThumb2_CTRL
+    400994: RightHandThumb2_CTRL_AnimData_CONST_GRP
+    400996: RightHandThumb2_CTRL_In_Rig_CONST_GRP
+    400998: RightHandThumb2_CTRL_POS_GRP
+    401000: RightHandThumb3_CTRL
+    401002: RightHandThumb3_CTRL_AnimData_CONST_GRP
+    401004: RightHandThumb3_CTRL_In_Rig_CONST_GRP
+    401006: RightHandThumb3_CTRL_POS_GRP
+    401008: RightLeg_FK_CTRL
+    401010: RightLeg_FK_CTRL_AnimData_CONST_GRP
+    401012: RightLeg_FK_CTRL_In_Rig_CONST_GRP
+    401014: RightLeg_FK_CTRL_POS_GRP
+    401016: RightLeg_IK_BakingLOC
+    401018: RightLeg_IK_CTRL
+    401020: RightLeg_IK_CTRL_AnimData_CONST_GRP
+    401022: RightLeg_IK_CTRL_Follow_Foot_GRP
+    401024: RightLeg_IK_CTRL_Follow_Knee_GRP
+    401026: RightLeg_IK_CTRL_GuideCurve
+    401028: RightLeg_IK_CTRL_GuideCurve_Cluster1Handle
+    401030: RightLeg_IK_CTRL_GuideCurve_Cluster2Handle
+    401032: RightLeg_IK_CTRL_In_Rig_CONST_GRP
+    401034: RightLeg_IK_CTRL_parent_AnimData_CONST_GRP
+    401036: RightLeg_IK_CTRL_parent_Global_POS_GRP
+    401038: RightLeg_IK_CTRL_parent_POS_GRP
+    401040: RightLeg_IK_CTRL_POS_GRP
+    401042: RightShoulder_CTRL
+    401044: RightShoulder_CTRL_AnimData_CONST_GRP
+    401046: RightShoulder_CTRL_In_Rig_CONST_GRP
+    401048: RightShoulder_CTRL_POS_GRP
+    401050: RightToeBase_FK_CTRL
+    401052: RightToeBase_FK_CTRL_AnimData_CONST_GRP
+    401054: RightToeBase_FK_CTRL_In_Rig_CONST_GRP
+    401056: RightToeBase_FK_CTRL_POS_GRP
+    401058: RightUpLeg_FK_CTRL
+    401060: RightUpLeg_FK_CTRL_AnimData_CONST_GRP
+    401062: RightUpLeg_FK_CTRL_In_Rig_CONST_GRP
+    401064: RightUpLeg_FK_CTRL_POS_GRP
+    401066: Root_CTRL
+    401068: Root_CTRL_AnimData_CONST_GRP
+    401070: Root_CTRL_In_Rig_CONST_GRP
+    401072: Root_CTRL_POS_GRP
+    401074: Spine1_CTRL
+    401076: Spine1_CTRL_AnimData_CONST_GRP
+    401078: Spine1_CTRL_In_Rig_CONST_GRP
+    401080: Spine1_CTRL_POS_GRP
+    401082: Spine2_CTRL
+    401084: Spine2_CTRL_AnimData_CONST_GRP
+    401086: Spine2_CTRL_In_Rig_CONST_GRP
+    401088: Spine2_CTRL_POS_GRP
+    401090: Spine_CTRL
+    401092: Spine_CTRL_AnimData_CONST_GRP
+    401094: Spine_CTRL_In_Rig_CONST_GRP
+    401096: Spine_CTRL_POS_GRP
+    401098: transform2
+    401100: transform3
+    2100000: pasted__lambert2
+    2100002: pasted__blinn4
+    2100004: lambert1
+    2100006: pasted__blinn3
+    2100008: 'Material #25'
+    2100010: 'Material #26'
+    2100012: 'Material #27'
+    2100014: pasted__pasted__lambert2
+    2100016: pasted__pasted__blinn4
+    2100018: pasted__pasted__blinn3
+    2300000: Katana1
+    2300002: Katana_Left
+    3300000: Katana1
+    3300002: Katana_Left
+    4300000: Katana1
+    4300002: Mesh_Object001
+    4300004: Katana_Left
+    9500000: //RootNode
+    13700000: Mesh_Object001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Bind_Root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandIndex1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandIndex2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandIndex3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandRing1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandRing2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_LeftHandRing3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandIndex1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandIndex2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandIndex3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandRing1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandRing2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_RightHandRing3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bind_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: BlackWarrior_Model(Clone)
+      parentName: 
+      position: {x: -0.007834938, y: -0.0057907156, z: -0.017822409}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Joint_GRP
+      parentName: BlackWarrior_Model(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Joint_GRP
+      parentName: Joint_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Root
+      parentName: Bind_Joint_GRP
+      position: {x: -0.002041106, y: 1.2114813, z: -0.0042519066}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: transform1
+      parentName: Bind_Root
+      position: {x: 0.0038882063, y: -0.46099144, z: 0.008690677}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.39370078, y: 0.39370078, z: 0.39370078}
+    - name: Bind_Hips
+      parentName: transform1
+      position: {x: -0.0098760445, y: 1.1709182, z: -0.022074318}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    - name: Bind_LeftUpLeg
+      parentName: Bind_Hips
+      position: {x: -0.042043112, y: -0.020871352, z: 0.0002470231}
+      rotation: {x: -0.17236105, y: 0.00012036847, z: 0.9843888, w: 0.03564217}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftLeg
+      parentName: Bind_LeftUpLeg
+      position: {x: 8.6862684e-10, y: 0.19565725, z: -2.911954e-11}
+      rotation: {x: -0.047321077, y: 0.006830932, z: -0.00010273909, w: 0.99885637}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftFoot
+      parentName: Bind_LeftLeg
+      position: {x: 1.4258013e-10, y: 0.201427, z: 0.0000000010924897}
+      rotation: {x: 0.48589984, y: -0.0740406, z: 0.041806415, w: 0.86986876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftToeBase
+      parentName: Bind_LeftFoot
+      position: {x: -1.6966367e-10, y: 0.074938275, z: -0.0000000023509736}
+      rotation: {x: 0.3026549, y: 0.07457465, z: -0.023761408, w: 0.9498811}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightUpLeg
+      parentName: Bind_Hips
+      position: {x: 0.042043112, y: -0.020871352, z: 0.00031312226}
+      rotation: {x: 0.021954749, y: 0.044781283, z: 0.99811894, w: -0.03565431}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightLeg
+      parentName: Bind_RightUpLeg
+      position: {x: -4.8735105e-10, y: 0.19562657, z: -1.5633325e-10}
+      rotation: {x: -0.057057597, y: -0.0119000515, z: -0.00017775911, w: 0.9983}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightFoot
+      parentName: Bind_RightLeg
+      position: {x: 3.802189e-10, y: 0.20158744, z: 8.7086516e-10}
+      rotation: {x: 0.45770353, y: 0.028639533, z: -0.0049451888, w: 0.8886298}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightToeBase
+      parentName: Bind_RightFoot
+      position: {x: -7.873024e-11, y: 0.07582696, z: 4.1310722e-10}
+      rotation: {x: 0.29835454, y: -0.08244465, z: 0.025877789, w: 0.95053554}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Spine
+      parentName: Bind_Root
+      position: {x: -0, y: 0.037602235, z: -0.004928455}
+      rotation: {x: 0.0021954256, y: 0, z: -0, w: 0.9999976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Spine1
+      parentName: Bind_Spine
+      position: {x: -0, y: 0.044244457, z: -1.1949602e-10}
+      rotation: {x: 0.0038727378, y: -0, z: -0, w: 0.9999925}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Spine2
+      parentName: Bind_Spine1
+      position: {x: -0, y: 0.05056507, z: -2.7260022e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftShoulder
+      parentName: Bind_Spine2
+      position: {x: -0.019859543, y: 0.04886686, z: -0.0012164257}
+      rotation: {x: 0.55832005, y: -0.42234132, z: 0.5901295, w: 0.40206188}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftArm
+      parentName: Bind_LeftShoulder
+      position: {x: -3.012296e-11, y: 0.040504526, z: 1.4106269e-10}
+      rotation: {x: -0.15150218, y: -0.10695039, z: -0.008327663, w: 0.98261863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftForeArm
+      parentName: Bind_LeftArm
+      position: {x: 3.7271064e-10, y: 0.115687884, z: 5.0391924e-10}
+      rotation: {x: 0.008563383, y: 0.0076577207, z: -0.03145905, w: 0.9994391}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHand
+      parentName: Bind_LeftForeArm
+      position: {x: -2.4012889e-11, y: 0.10376196, z: 0.0000000010980469}
+      rotation: {x: -0.054420974, y: 0.060074467, z: -0.13740182, w: 0.9871931}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandIndex1
+      parentName: Bind_LeftHand
+      position: {x: 0.010913148, y: 0.050052855, z: 0.0005223622}
+      rotation: {x: 0.045651305, y: -0.011400816, z: -0.009236821, w: 0.99884975}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandIndex2
+      parentName: Bind_LeftHandIndex1
+      position: {x: -0.000113470465, y: 0.014975869, z: 4.043317e-10}
+      rotation: {x: 0.020059675, y: -0.0009159989, z: 0.005479686, w: 0.99978334}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandIndex3
+      parentName: Bind_LeftHandIndex2
+      position: {x: 0.00005360409, y: 0.013978874, z: -5.2084556e-12}
+      rotation: {x: 0.38705453, y: 0, z: -0, w: 0.92205685}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandMiddle1
+      parentName: Bind_LeftHand
+      position: {x: 0.00026953645, y: 0.049168065, z: -0.001996994}
+      rotation: {x: 0.043092933, y: 0.010035106, z: -0.0008944301, w: 0.99902034}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandMiddle2
+      parentName: Bind_LeftHandMiddle1
+      position: {x: -0.000027311937, y: 0.016484303, z: -9.2102895e-11}
+      rotation: {x: 0.021527551, y: 0.000490587, z: 0.002619062, w: 0.9997647}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandMiddle3
+      parentName: Bind_LeftHandMiddle2
+      position: {x: 0.000061224506, y: 0.015982766, z: 2.0891625e-11}
+      rotation: {x: 0.32254252, y: 0, z: -0, w: 0.94655496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandRing1
+      parentName: Bind_LeftHand
+      position: {x: -0.0111826835, y: 0.044539046, z: 0.0004275987}
+      rotation: {x: 0.04411965, y: 0.033487767, z: 0.006680929, w: 0.99844253}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandRing2
+      parentName: Bind_LeftHandRing1
+      position: {x: -0.00006050447, y: 0.014881081, z: 6.951751e-10}
+      rotation: {x: 0.01991582, y: -0.0008183305, z: 0.0023125277, w: 0.9997987}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandRing3
+      parentName: Bind_LeftHandRing2
+      position: {x: 0.000010312162, y: 0.013789117, z: -4.111765e-11}
+      rotation: {x: 0.4325879, y: 0, z: -0, w: 0.9015918}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandThumb1
+      parentName: Bind_LeftHand
+      position: {x: 0.01152476, y: 0.016766675, z: 0.0068154894}
+      rotation: {x: 0.046511006, y: 0.018269889, z: -0.29850313, w: 0.95309967}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandThumb2
+      parentName: Bind_LeftHandThumb1
+      position: {x: 0.0021565876, y: 0.017029382, z: 1.1737353e-10}
+      rotation: {x: 0.020116802, y: -0.15247647, z: -0.069698945, w: 0.985641}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_LeftHandThumb3
+      parentName: Bind_LeftHandThumb2
+      position: {x: -0.0007204956, y: 0.017944558, z: -9.2374897e-10}
+      rotation: {x: 0.1898538, y: 0.08390293, z: 0.45712426, w: 0.86484295}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightShoulder
+      parentName: Bind_Spine2
+      position: {x: 0.019859543, y: 0.048824232, z: -0.0008911958}
+      rotation: {x: -0.5631675, y: -0.41895267, z: 0.58578265, w: -0.4051909}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightArm
+      parentName: Bind_RightShoulder
+      position: {x: 2.643805e-12, y: 0.040504526, z: 1.449287e-10}
+      rotation: {x: -0.15110864, y: 0.20691265, z: -0.012572885, w: 0.96653783}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightForeArm
+      parentName: Bind_RightArm
+      position: {x: -5.777206e-11, y: 0.11576143, z: 1.6626721e-10}
+      rotation: {x: -0.016823677, y: -0.0091319075, z: 0.030763056, w: 0.9993434}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHand
+      parentName: Bind_RightForeArm
+      position: {x: -8.545359e-10, y: 0.10318557, z: 0.0000000016734827}
+      rotation: {x: 0.03204932, y: -0.118876964, z: 0.00048375153, w: 0.9923915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandRing1
+      parentName: Bind_RightHand
+      position: {x: 0.011616064, y: 0.05235605, z: -0.001051418}
+      rotation: {x: 0.05103141, y: -0.011281363, z: -0.022372523, w: 0.9983827}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandRing2
+      parentName: Bind_RightHandRing1
+      position: {x: 0.00008233318, y: 0.015368017, z: -1.7382625e-10}
+      rotation: {x: 0.03087816, y: 0.00049273943, z: -0.002783514, w: 0.99951917}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandRing3
+      parentName: Bind_RightHandRing2
+      position: {x: -0.000013897364, y: 0.014221504, z: 3.6139269e-12}
+      rotation: {x: 0.13532808, y: 0, z: -0, w: 0.99080086}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandMiddle1
+      parentName: Bind_RightHand
+      position: {x: -0.0006819373, y: 0.054348625, z: -0.0021243652}
+      rotation: {x: 0.057823878, y: -0.0032398386, z: -0.0046656877, w: 0.9983106}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandMiddle2
+      parentName: Bind_RightHandMiddle1
+      position: {x: 0.00010224299, y: 0.01740076, z: -1.5714231e-10}
+      rotation: {x: 0.03148482, y: -0.000078391044, z: -0.0054348665, w: 0.99948955}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandMiddle3
+      parentName: Bind_RightHandMiddle2
+      position: {x: -0.00011459237, y: 0.017320113, z: 2.4338042e-11}
+      rotation: {x: 0.038719952, y: 0, z: -0, w: 0.9992501}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandIndex1
+      parentName: Bind_RightHand
+      position: {x: -0.010934123, y: 0.054097876, z: -0.00065588736}
+      rotation: {x: 0.055883322, y: 0.006944751, z: 0.038474537, w: 0.9976716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandIndex2
+      parentName: Bind_RightHandIndex1
+      position: {x: 0.0002110338, y: 0.017144032, z: 2.3804703e-10}
+      rotation: {x: 0.032489326, y: 0.00014442153, z: -0.009851273, w: 0.99942356}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandIndex3
+      parentName: Bind_RightHandIndex2
+      position: {x: -0.00017045076, y: 0.01580239, z: -5.2533373e-11}
+      rotation: {x: 0.056641307, y: 0, z: -0, w: 0.9983946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandThumb1
+      parentName: Bind_RightHand
+      position: {x: -0.01232748, y: 0.019169398, z: 0.0049434016}
+      rotation: {x: -0.00036560555, y: -0.018482713, z: 0.3071432, w: 0.9514837}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandThumb2
+      parentName: Bind_RightHandThumb1
+      position: {x: -0.0016713475, y: 0.01858178, z: -7.9176554e-11}
+      rotation: {x: 0.03597085, y: -0.002976803, z: 0.023271333, w: 0.99907744}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_RightHandThumb3
+      parentName: Bind_RightHandThumb2
+      position: {x: -0.00025839006, y: 0.018354423, z: -6.1406125e-10}
+      rotation: {x: -0.03721088, y: -0.0055703553, z: -0.1479425, w: 0.98828}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Neck
+      parentName: Bind_Spine2
+      position: {x: -0, y: 0.05688576, z: 0.000000008459244}
+      rotation: {x: 0.0651166, y: 0, z: -0, w: 0.99787766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bind_Head
+      parentName: Bind_Neck
+      position: {x: -0, y: 0.021846008, z: 0.0040864777}
+      rotation: {x: -0.061048545, y: 0, z: -0, w: 0.99813485}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mesh_GRP
+      parentName: BlackWarrior_Model(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Katana1
+      parentName: Mesh_GRP
+      position: {x: -0.23716506, y: 0.9157907, z: -0.01217759}
+      rotation: {x: 0.01180774, y: 0.6520289, z: -0.18321496, w: 0.7356298}
+      scale: {x: 0.65, y: 0.65, z: 0.65}
+    - name: Katana_Left
+      parentName: Mesh_GRP
+      position: {x: 0.20758493, y: 0.8660007, z: 0.2630224}
+      rotation: {x: -0.06737567, y: -0.69507, z: -0.21875708, w: 0.6815303}
+      scale: {x: 0.65, y: 0.65, z: 0.65}
+    - name: Mesh_Object001
+      parentName: Mesh_GRP
+      position: {x: 0.007834938, y: 0.0057907156, z: 0.017822409}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.54, y: 2.54, z: 2.54}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
