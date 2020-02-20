@@ -80,10 +80,14 @@
      <Compile Include="Assets\Easytouch\EasyTouchControls\Plugins\ETCTouchPad.cs" />
      <Compile Include="Assets\Scripts\AdaptionExcept.cs" />
      <Compile Include="Assets\Scripts\AfterImageEffects.cs" />
+     <Compile Include="Assets\Scripts\AIController.cs" />
      <Compile Include="Assets\Scripts\AllClickListener.cs" />
+     <Compile Include="Assets\Scripts\AnimationController.cs" />
+     <Compile Include="Assets\Scripts\BloodController.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Demo_Script.cs" />
      <Compile Include="Assets\Scripts\EmptyRaycast.cs" />
-     <Compile Include="Assets\Scripts\PCCameraController.cs" />
-     <Compile Include="Assets\Scripts\PCCharacterController.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\PublicData.cs" />
      <Compile Include="Assets\Scripts\ScreenAdaption.cs" />
@@ -91,6 +95,7 @@
      <Compile Include="Assets\Scripts\Tools\DeleteUnusingThings.cs" />
      <Compile Include="Assets\Scripts\Tools\ShowSelectionDependencies.cs" />
      <Compile Include="Assets\Scripts\Tools\TXTFileHelper.cs" />
+     <Compile Include="Assets\Scripts\WeaponTrail.cs" />
      <None Include="Assets\Easytouch\EasyTouchControls\ReleaseNotes.txt" />
      <None Include="Assets\Easytouch\Readme.txt" />
      <None Include="Assets\Models\Scenes\Scene_01\Mobile_Transparent_Vertex_Color_Zwrite.shader" />

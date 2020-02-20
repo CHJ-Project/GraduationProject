@@ -408,6 +408,7 @@ public class AllClickListener : MonoBehaviour {
     //选择英雄后确定进入游戏按钮
     public void selectHero()
     {
-        SceneManager.LoadScene("MainScene_1");
+        int i = Random.Range(1, 5);
+        SceneManager.LoadScene("scene_0" + i.ToString());
     }
 }
