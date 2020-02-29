@@ -126,7 +126,7 @@ ModelImporter:
     4300000: Mesh_Berserker
     4300002: Mesh_Karate
     4300004: Mesh_Ninja
-    7400000: RangeAttack1
+    7400000: RangeAttack
     9500000: //RootNode
     13700000: Mesh_Berserker
     13700002: Mesh_Karate
@@ -162,7 +162,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RangeAttack1
+      name: RangeAttack
       takeName: Take 001
       firstFrame: 0
       lastFrame: 34

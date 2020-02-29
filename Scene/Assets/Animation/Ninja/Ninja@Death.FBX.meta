@@ -126,7 +126,7 @@ ModelImporter:
     4300000: Mesh_Berserker
     4300002: Mesh_Karate
     4300004: Mesh_Ninja
-    7400000: Death
+    7400000: Dead
     9500000: //RootNode
     13700000: Mesh_Berserker
     13700002: Mesh_Karate
@@ -143,11 +143,13 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
-      does not match:\n\tTransform 'Jnt_Hips' for human bone 'Hips' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'B_Spine' has translation animation that will
+      be discarded.\n\t'B_Spine1' has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -160,7 +162,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Death
+      name: Dead
       takeName: Take 001
       firstFrame: 0
       lastFrame: 40
