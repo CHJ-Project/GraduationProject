@@ -37,7 +37,7 @@ public class EasyTouchWelcomeScreen : EditorWindow {
 	[MenuItem ("Tools/Easy Touch/Folder Structure/Switch to JS", false, 100)]
 	public static void JsFolders(){
 		// EasyTouch is here
-		if (!Directory.Exists(Application.dataPath + "/EasyTouchBundle/EasyTouch/Plugins/")){
+        if (!Directory.Exists(Application.dataPath + "/EasyTouchBundle/EasyTouch/Plugins/")){
 			Debug.LogWarning("Folder structure incompatible, did you already switch to JS folder structure, or have you manually changed the folder structure?");
 			return;
 		}
@@ -73,7 +73,7 @@ public class EasyTouchWelcomeScreen : EditorWindow {
 	}
 
 	static EasyTouchWelcomeScreen(){
-		EditorApplication.playmodeStateChanged -= OnPlayModeChanged;
+        EditorApplication.playmodeStateChanged -= OnPlayModeChanged;
 		EditorApplication.playmodeStateChanged += OnPlayModeChanged;
 		
 		showAtStartup = EditorPrefs.GetBool(PREFSHOWATSTARTUP, true);
