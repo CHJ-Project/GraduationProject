@@ -287,6 +287,9 @@
  <Reference Include="CruncherScripts">
  <HintPath>C:/Users/Administrator/Desktop/毕设/GraduationProject/Scene/Assets/Models/Scenes/Scene_03/CruncherScripts.dll</HintPath>
  </Reference>
+ <Reference Include="common">
+ <HintPath>C:/Users/Administrator/Desktop/毕设/GraduationProject/Scene/Assets/Plugins/common.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
