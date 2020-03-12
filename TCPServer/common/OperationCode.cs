@@ -7,15 +7,15 @@ namespace common
 {
     public enum OperationCode
     {
-        //服务器端需要响应的操作码
         login,                  //处理登录操作
         register,               //处理注册操作
         maching,                //处理匹配请求
         sethero,                //将玩家选择的角色类型发送给服务器端
         game,                   //处理服务器端接收客户端发来游戏中的位置，旋转，动画信息
+        endgame,                //处理游戏结束请求
         exit,                   //处理玩家退出游戏请求
-
-        //客户端需要响应的操作码
+        enemyname,              //处理敌方玩家名字，将其显示在战斗界面中
+        chat,                   //处理聊天请求
         error,                  //处理错误信息
         loginsuccess,           //处理登录成功请求
         registersuccess,        //处理注册成功请求

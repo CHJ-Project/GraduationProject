@@ -12,11 +12,11 @@ namespace TCPServer
     {
         static Socket serverSocket = null;
         static Message message = new Message();
-        static Dictionary<string,Socket> clientDictionary = new Dictionary<string,Socket>();
+        static Dictionary<string,Socket> clientDictionary = new Dictionary<string,Socket>();        //客户端列表
         static int codeIndex = 0;
         static int gameCodeIndex = 0;
         static List<string> machingList = new List<string>();                                       //匹配队列
-        static Dictionary<string, PlayerInfo> gameList = new Dictionary<string, PlayerInfo>();
+        static Dictionary<string, PlayerInfo> gameList = new Dictionary<string, PlayerInfo>();      //游戏队列
 
         static void Main(string[] args)
         {
@@ -53,13 +53,6 @@ namespace TCPServer
                 */
                 int count = clientSocket.EndReceive(ar);
 
-                string msg = Encoding.UTF8.GetString(message.Data, 0, count);
-                
-                if (msg != "" && msg != null)
-                {
-                    Console.WriteLine("从客户端接受到的数据为： \n" + msg);
-                }
-                
                 AnalyzeData(count,clientSocket);
                 
                 //继续异步接收客户端发送的数据
@@ -107,8 +100,11 @@ namespace TCPServer
                     OperationCode code = (OperationCode)BitConverter.ToInt32(message.Data, 4);
                     string dataStr = Encoding.UTF8.GetString(message.Data, 8, dataCount);
                     OnReceiveCallBack(code, dataStr, clientSocket);
+                    Console.WriteLine("接收到的数据: " + code.ToString() + "  " + dataStr);
                     Array.Copy(message.Data, dataCount + 8, message.Data, 0, message.Data.Length - 8 - dataCount);
+                    //Console.WriteLine("before: " + message.StartIndex);
                     message.StartIndex = message.StartIndex - dataCount - 8;
+                    //Console.WriteLine("after: " + message.StartIndex);
                 }
                 else
                 {
@@ -132,11 +128,11 @@ namespace TCPServer
                         cmd = new MySqlCommand("update user set isLogin = 0 where username = @username;", sqlConnection);
                         cmd.Parameters.AddWithValue("username", commandStr);
                         cmd.ExecuteNonQuery();
-                        Console.WriteLine("设置登录状态成功！");
+                        Console.WriteLine("设置取消登录状态成功！");
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("设置登录状态失败！");
+                        Console.WriteLine("设置取消登录状态失败！");
                         Console.WriteLine(e);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -220,6 +216,34 @@ namespace TCPServer
                     }
                     catch (Exception e)
                     {
+                        Console.WriteLine(e);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                    }
+                    break;
+                case OperationCode.endgame:
+                    try
+                    {
+                        cmd = new MySqlCommand("select coin,soul from user where username = @username", sqlConnection);
+                        cmd.Parameters.AddWithValue("username", commandStr);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        int coin = Convert.ToInt32(reader["coin"]) + 10;
+                        int soul = Convert.ToInt32(reader["soul"]) + 1;
+                        reader.Close();
+                        cmd = new MySqlCommand("update user set coin = @coin where username = @username;", sqlConnection);
+                        cmd.Parameters.AddWithValue("coin", coin);
+                        cmd.Parameters.AddWithValue("username", commandStr);
+                        cmd.ExecuteNonQuery();
+                        cmd = new MySqlCommand("update user set soul = @soul where username = @username;", sqlConnection);
+                        cmd.Parameters.AddWithValue("soul", soul);
+                        cmd.Parameters.AddWithValue("username", commandStr);
+                        cmd.ExecuteNonQuery();
+                        Console.WriteLine("加货币成功！");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("加货币失败！");
                         Console.WriteLine(e);
                         Console.WriteLine();
                         Console.WriteLine();
@@ -311,10 +335,12 @@ namespace TCPServer
                         if (data.Split(new char[] { '|' })[1] == info2.code1)
                         {
                             info2.player1 = data.Split(new char[] { '|' })[2];
+                            info2.playerName1 = data.Split(new char[] { '|' })[3];
                         }
                         else
                         {
                             info2.player2 = data.Split(new char[] { '|' })[2];
+                            info2.playerName2 = data.Split(new char[] { '|' })[3];
                         }
                     }
                     else
@@ -322,10 +348,12 @@ namespace TCPServer
                         if (data.Split(new char[] { '|' })[1] == info2.code1)
                         {
                             info2.player1 = data.Split(new char[] { '|' })[2];
+                            info2.playerName1 = data.Split(new char[] { '|' })[3];
                         }
                         else
                         {
                             info2.player2 = data.Split(new char[] { '|' })[2];
+                            info2.playerName2 = data.Split(new char[] { '|' })[3];
                         }
                         Socket client1, client2;
                         clientDictionary.TryGetValue(info2.code1, out client1);
@@ -333,8 +361,12 @@ namespace TCPServer
                         Random random = new Random();
                         int r = (int)new Random().Next(1,5);
                         info2.sceneName = "scene_0" + r.ToString();
+                        //分别发送对方选择的英雄
                         client1.Send(message.PackData(OperationCode.setenemytype, info2.player2));
                         client2.Send(message.PackData(OperationCode.setenemytype, info2.player1));
+                        //分别发送对方的名字
+                        client1.Send(message.PackData(OperationCode.enemyname, info2.playerName2));
+                        client2.Send(message.PackData(OperationCode.enemyname, info2.playerName1));
                         float player1_x, player1_y, player1_z, player2_x, player2_y, player2_z;
                         player1_y = 5.9f;
                         player2_y = 5.9f;
@@ -343,8 +375,8 @@ namespace TCPServer
                             float random_x = random.Next(0, 1500) / 100f;
                             player1_x = -35 - random_x;
                             player2_x = -50 + random_x;
-                            player1_z = random.Next(-6100, -6300) / 100f;
-                            player2_z = random.Next(-7000, -7200) / 100f;
+                            player1_z = random.Next(-6300, -6100) / 100f;
+                            player2_z = random.Next(-7200, -7000) / 100f;
                             client1.Send(message.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
                             client1.Send(message.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
                             client2.Send(message.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
@@ -405,6 +437,22 @@ namespace TCPServer
                     clientDictionary.TryGetValue(info3.GetOtherCode(data.Split(new char[] { '|' })[1]), out client);
                     client.Send(message.PackData(OperationCode.game, data));
                     break;
+                case OperationCode.chat:
+                    foreach (Socket i in clientDictionary.Values)
+                    {
+                        i.Send(message.PackData(OperationCode.chat, data));
+                    }
+                    break;
+                case OperationCode.endgame:
+                    PlayerInfo info;
+                    gameList.TryGetValue(data, out info);
+                    if (gameList.ContainsKey(data.Split(new char[] { '|' })[0]))
+                    {
+                        gameList.Remove(data);
+                    }
+                    OnDatabaseCallBack(code, data.Split(new char[] { '|' })[1], clientSocket);
+                    Console.WriteLine("endgame");
+                    break;
             }
         }
     }
@@ -412,8 +460,10 @@ namespace TCPServer
     public class PlayerInfo{
         public string code1;
         public string player1 = "";
+        public string playerName1 = "";
         public string code2;
         public string player2 = "";
+        public string playerName2 = "";
         public string sceneName = "";
 
         public PlayerInfo(string code1, string code2)
