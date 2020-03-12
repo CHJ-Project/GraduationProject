@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 33377242077845662}
   - component: {fileID: 23948716455656410}
   - component: {fileID: 64514059580776352}
+  - component: {fileID: 114540604216399710}
   m_Layer: 9
   m_Name: Katana_Left
   m_TagString: PlayerWeapon
@@ -5495,6 +5496,17 @@ MonoBehaviour:
   desiredTime: 2
   startColor: {r: 1, g: 1, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 0}
+--- !u!114 &114540604216399710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257037565937028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cab3ad17edb0c4580491d65ea322ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114731609484851322
 MonoBehaviour:
   m_ObjectHideFlags: 1

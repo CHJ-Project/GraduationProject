@@ -1025,6 +1025,7 @@ GameObject:
   - component: {fileID: 198657456572997650}
   - component: {fileID: 199139157154436874}
   - component: {fileID: 64403657246355366}
+  - component: {fileID: 114224565535120094}
   m_Layer: 10
   m_Name: Sword
   m_TagString: PlayerWeapon
@@ -2507,6 +2508,17 @@ MonoBehaviour:
   desiredTime: 0.5
   startColor: {r: 1, g: 1, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 0}
+--- !u!114 &114224565535120094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828645072825494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cab3ad17edb0c4580491d65ea322ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114606951755491502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2870,7 +2882,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -991455555
+  randomSeed: -1335025577
   InitialModule:
     serializedVersion: 3
     enabled: 1
