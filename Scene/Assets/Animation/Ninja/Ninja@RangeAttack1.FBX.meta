@@ -184,23 +184,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.22435898
-        functionName: OpenAfterImageEffect
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: e6d48a0624b57dc4ca583f75057cdd37,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.3653846
-        functionName: CloseAfterImageEffect
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: e6d48a0624b57dc4ca583f75057cdd37,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask:
       - path: 
         weight: 1

@@ -128,10 +128,20 @@ ModelImporter:
     400120: root
     400122: Spine
     4300000: Blueisland
-    7400000: Block_Guard
+    7400000: BlockGetHit
     9500000: //RootNode
     13700000: Blueisland
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blueisland_Character_Mat1
+    second: {fileID: 2100000, guid: e2c58a6fc061b7e4bae14f7753ad23a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blueisland_Character_Mat2
+    second: {fileID: 2100000, guid: 9bf1d9bbac660cb40bcf2cd1537129a2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -159,7 +169,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Block_Guard
+      name: BlockGetHit
       takeName: Take 001
       firstFrame: 0
       lastFrame: 15
