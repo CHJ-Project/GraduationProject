@@ -3,8 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using common;
 
 public class AllClickListener : MonoBehaviour {
+
+    //网络连接
+    NetworkHelper networkHelper = null;
+
+    //判断返回的消息是否改变，改变则操作
+    [HideInInspector]
+    public string data;
+    [HideInInspector]
+    public bool isMsgChange = false;
+    [HideInInspector]
+    public OperationCode code;
+
+    //游戏角色
+    public GameObject warrior;
+    public GameObject ninja;
+    public GameObject swordsman;
+
+    //匹配中面板
+    public GameObject machingpanel;
+
+    //匹配成功面板
+    public GameObject machingsuccesspanel;
 
 	//通用遮罩
 	public GameObject mask;
@@ -14,6 +37,12 @@ public class AllClickListener : MonoBehaviour {
 
 	//获取Hero相机
 	public GameObject heroCamera;
+
+    //获取提示面板
+    public GameObject tipspanel;
+
+    //获取登录注册界面
+    public GameObject loginview;
 
 	//获取主界面背景以及主界面
 	public GameObject mainviewbg;
@@ -86,15 +115,41 @@ public class AllClickListener : MonoBehaviour {
 
     //英雄选择面板显示隐藏控制
     public GameObject heroselectview;
-
-    //获取承载场景间数据的游戏对象
-    public GameObject publicDataGameObject;
+    
     //获取承载数据的脚本
-    private PublicData dontDestoryOnLoad;
+    [HideInInspector]
+    public DontDestroyOnLoad dontDestroyOnLoad;
 
 	void Start(){
+        //获取网络连接
+        networkHelper = GameObject.Find("NetworkConnection").GetComponent<NetworkHelper>();
+        //将自身赋值给networkHelper
+        networkHelper.allClickListener = this;
         //获取DontDestoryOnLoad脚本
-        dontDestoryOnLoad = publicDataGameObject.GetComponent<PublicData>();
+        dontDestroyOnLoad = GameObject.Find("DontDestroyOnLoad").GetComponent<DontDestroyOnLoad>();
+        dontDestroyOnLoad.SetHero("Warrior");
+        //设置武士模型默认显示，忍者、剑士模型默认隐藏
+        warrior.SetActive(true);
+        ninja.SetActive(false);
+        swordsman.SetActive(false);
+        //控制提示面板初始隐藏
+        tipspanel.SetActive(false);
+        //控制匹配中面板初始隐藏
+        machingpanel.SetActive(false);
+        //控制匹配成功面板初始隐藏
+        machingsuccesspanel.SetActive(false);
+        //首次进入时，控制登录面板初始显示
+        if (networkHelper.GetSelfCode() == "-1")
+        {
+            loginview.SetActive(true);
+        }
+        else
+        {
+            loginview.SetActive(false);
+            mainview.transform.Find("topLeft/userInfo/txtName").GetComponent<Text>().text = networkHelper.userName;
+            mainview.transform.Find("topCenter/coinBar/txtCoin").GetComponent<Text>().text = networkHelper.coin;
+            mainview.transform.Find("topCenter/soulBar/txtSoul").GetComponent<Text>().text = networkHelper.soul;
+        }
 		//控制主界面背景以及主界面初始显示
 		mainviewbg.SetActive(true);
 		mainview.SetActive (true);
@@ -149,6 +204,123 @@ public class AllClickListener : MonoBehaviour {
         //控制英雄选择面板初始隐藏
         heroselectview.SetActive(false);
 	}
+
+    void Update()
+    {
+        if (isMsgChange)
+        {
+            string[] datas = data.Split(new char[] { '|' });
+            if (code.Equals(OperationCode.registersuccess) || code.Equals(OperationCode.error))
+            {
+                tipspanel.SetActive(true);
+                tipspanel.transform.Find("txtTips").GetComponent<Text>().text = datas[0];
+                isMsgChange = false;
+            }
+            if (code.Equals(OperationCode.loginsuccess))
+            {
+                isMsgChange = false;
+                mainview.transform.Find("topLeft/userInfo/txtName").GetComponent<Text>().text = networkHelper.userName;
+                mainview.transform.Find("topCenter/coinBar/txtCoin").GetComponent<Text>().text = networkHelper.coin;
+                mainview.transform.Find("topCenter/soulBar/txtSoul").GetComponent<Text>().text = networkHelper.soul;
+                loginview.SetActive(false);
+            }
+            if (code.Equals(OperationCode.setothercode))
+            {
+                isMsgChange = false;
+                machingsuccesspanel.SetActive(true);
+            }
+            if (code.Equals(OperationCode.setscene))
+            {
+                isMsgChange = false;
+                SceneManager.LoadScene(networkHelper.GetSceneName());
+            }
+            if (code.Equals(OperationCode.chat))
+            {
+                isMsgChange = false;
+                GameObject chatviewitem = Instantiate(Resources.Load("chatviewitem", typeof(GameObject))) as GameObject;
+                Transform chatviewcontent = chatview.transform.Find("listView/content");
+                chatviewitem.transform.SetParent(chatviewcontent);
+                chatviewitem.transform.Find("txtName").GetComponent<Text>().text = datas[0];
+                chatviewitem.transform.Find("imgChatBG/txtContent").GetComponent<Text>().text = datas[1];
+                chatviewitem.transform.localScale = Vector3.one;
+                LayoutRebuilder.ForceRebuildLayoutImmediate(chatviewcontent.GetComponent<RectTransform>());
+                GameObject smallchatviewitem = Instantiate(Resources.Load("smallchatviewitem", typeof(GameObject))) as GameObject;
+                Transform smallchatviewcontent = mainview.transform.Find("bottomLeft/smallChatView/content");
+                smallchatviewitem.transform.SetParent(smallchatviewcontent);
+                smallchatviewitem.transform.Find("area/txtPlayerName").GetComponent<Text>().text = datas[0];
+                smallchatviewitem.transform.Find("txtContent").GetComponent<Text>().text = datas[1];
+                smallchatviewitem.transform.localScale = Vector3.one;
+                LayoutRebuilder.ForceRebuildLayoutImmediate(smallchatviewcontent.GetComponent<RectTransform>());
+            }
+        }
+    }
+
+    //登录按钮
+    public void LoginButton(){
+        string account = loginview.transform.Find("loginpanel/AccountInputField").GetComponent<InputField>().text;
+        string password = loginview.transform.Find("loginpanel/PasswordInputField").GetComponent<InputField>().text;
+        if (account == "")
+        {
+            tipspanel.SetActive(true);
+            tipspanel.transform.Find("txtTips").GetComponent<Text>().text = "账号不能为空!";
+        }
+        else if (password == "")
+        {
+            tipspanel.SetActive(true);
+            tipspanel.transform.Find("txtTips").GetComponent<Text>().text = "密码不能为空!";
+        }
+        else
+        {
+            networkHelper.Send(OperationCode.login, account + "|" + password);
+        }
+    }
+
+    //注册按钮
+    public void RegisterButton(){
+        if (loginview.transform.Find("registerpanel").gameObject.activeInHierarchy)
+        {
+            string account = loginview.transform.Find("registerpanel/AccountInputField").GetComponent<InputField>().text;
+            string password1 = loginview.transform.Find("registerpanel/PasswordInputField").GetComponent<InputField>().text;
+            string password2 = loginview.transform.Find("registerpanel/ConfirmPasswordInputField").GetComponent<InputField>().text;
+            if (account == "")
+            {
+                tipspanel.SetActive(true);
+                tipspanel.transform.Find("txtTips").GetComponent<Text>().text = "账号不能为空!";
+            }
+            else if (password1 == "")
+            {
+                tipspanel.SetActive(true);
+                tipspanel.transform.Find("txtTips").GetComponent<Text>().text = "密码不能为空!";
+            }
+            else if (password1 != password2)
+            {
+                tipspanel.SetActive(true);
+                tipspanel.transform.Find("txtTips").GetComponent<Text>().text = "两次输入密码不相同!";
+            }
+            else
+            {
+                networkHelper.Send(OperationCode.register, account + "|" + password1);
+            }
+        }
+        else
+        {
+            loginview.transform.Find("loginpanel").gameObject.SetActive(false);
+            loginview.transform.Find("registerpanel").gameObject.SetActive(true);
+        }
+    }
+
+    //注册面板返回登录按钮
+    public void BackToLoginButton()
+    {
+        loginview.transform.Find("loginpanel").gameObject.SetActive(true);
+        loginview.transform.Find("registerpanel").gameObject.SetActive(false);
+    }
+
+    //提示面板确定按钮
+    public void OKButton()
+    {
+        tipspanel.SetActive(false);
+    }
 
 	//好友列表隐藏
 	public void MainviewfriendlistHide(){
@@ -214,6 +386,13 @@ public class AllClickListener : MonoBehaviour {
 		mask.SetActive (false);
 		chatview_anim.runtimeAnimatorController = chatview_hide_controller;
 	}
+
+    //聊天内容发送按钮
+    public void SendChatContentButton()
+    {
+        string content = chatview.transform.Find("InputField/Text").GetComponent<Text>().text;
+        networkHelper.Send(OperationCode.chat, networkHelper.userName + "|" + content);
+    }
 
 	//主界面邮箱按钮
 	public void MailviewButton(){
@@ -391,24 +570,89 @@ public class AllClickListener : MonoBehaviour {
 		practiceview.SetActive (false);
 	}
 
+    //选择英雄按钮
+    public void SelectWarrior()
+    {
+        warrior.SetActive(true);
+        ninja.SetActive(false);
+        swordsman.SetActive(false);
+        dontDestroyOnLoad.SetHero("Warrior");
+    }
+    public void SelectNinja()
+    {
+        warrior.SetActive(false);
+        ninja.SetActive(true);
+        swordsman.SetActive(false);
+        dontDestroyOnLoad.SetHero("Ninja");
+    }
+    public void SelectSwordsman()
+    {
+        warrior.SetActive(false);
+        ninja.SetActive(false);
+        swordsman.SetActive(true);
+        dontDestroyOnLoad.SetHero("Swordsman");
+    }
+
 	///
 	///跳转场景按钮事件
 	///
 
-	//1v1按钮
-	public void Button1v1(){
+	//跳转选择英雄面板
+	public void ButtonSelectHero(){
         heroselectview.SetActive(true);
+        practiceview.SetActive(false);
         matchingselectview.SetActive(false);
+        manmechineselectview.SetActive(false);
+        machingpanel.SetActive(false);
+        machingsuccesspanel.SetActive(false);
         mainviewbg.SetActive(false);
         mainview.SetActive(false);
         heroCamera.SetActive(true);
         mainCamera.enabled = false;
 	}
 
+    //practice按钮
+    public void PracticeButton()
+    {
+        dontDestroyOnLoad.SetMode("Practice");
+        ButtonSelectHero();
+    }
+
+    //PVP_1v1按钮
+    public void PVP_1v1()
+    {
+        dontDestroyOnLoad.SetMode("PVP_1v1");
+        machingpanel.SetActive(true);
+        networkHelper.Send(OperationCode.maching, networkHelper.GetSelfCode());
+        mainviewbg.SetActive(true);
+        mainview.SetActive(true);
+        matchingselectview.SetActive(false);
+        manmechineselectview.SetActive(false);
+        
+    }
+
+    //PVE_1v1按钮
+    public void PVE_1v1()
+    {
+        dontDestroyOnLoad.SetMode("PVE_1v1");
+        ButtonSelectHero();
+    }
+
     //选择英雄后确定进入游戏按钮
     public void selectHero()
     {
-        int i = Random.Range(1, 5);
-        SceneManager.LoadScene("scene_0" + i.ToString());
+        if (dontDestroyOnLoad.GetMode() == "PVP_1v1")
+        {
+            networkHelper.Send(OperationCode.sethero, networkHelper.GetGameCode() + "|" + networkHelper.GetSelfCode() + "|" + dontDestroyOnLoad.GetHero() + "|" + networkHelper.userName);
+            heroselectview.transform.Find("btnGO").gameObject.SetActive(false);
+        }
+        if (dontDestroyOnLoad.GetMode() == "PVE_1v1")
+        {
+            SceneManager.LoadScene("scene_0" + Random.Range(1, 5).ToString());
+        }
+        if (dontDestroyOnLoad.GetMode() == "Practice")
+        {
+            SceneManager.LoadScene("practice");
+        }
     }
 }

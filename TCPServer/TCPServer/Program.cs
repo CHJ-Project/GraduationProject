@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using MySql.Data.MySqlClient;
 using common;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace TCPServer
 {
@@ -23,7 +24,7 @@ namespace TCPServer
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             ///申请id    127.0.0.1  本机
             //IPAddress ip = new IPAddress(new byte[] { 127, 0, 0, 1 });
-            IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+            IPAddress ipAddress = IPAddress.Parse("192.168.1.106");
             //申请端口号
             IPEndPoint endPoint = new IPEndPoint(ipAddress, 88);
             //绑定ip和端口号
@@ -52,9 +53,9 @@ namespace TCPServer
                 Console.WriteLine("从客户端接受到的数据为： " + msg);
                 */
                 int count = clientSocket.EndReceive(ar);
-
-                AnalyzeData(count,clientSocket);
                 
+                AnalyzeData(count,clientSocket);
+                Console.WriteLine("index: " + message.StartIndex);
                 //继续异步接收客户端发送的数据
                 clientSocket.BeginReceive(message.Data, message.StartIndex,message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
             }
@@ -78,8 +79,6 @@ namespace TCPServer
             //转成字符串数组进行传递
             clientSocket.Send(System.Text.Encoding.UTF8.GetBytes(msg));
             */
-            //异步接收客户端发送的数据
-            clientSocket.BeginReceive(message.Data, message.StartIndex, message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
             //继续异步接收客户端连接
             serverSocket.BeginAccept(AcceptCallBack, null);
         }
@@ -90,7 +89,7 @@ namespace TCPServer
             message.StartIndex += count;
             while (true)
             {
-                if (message.StartIndex <= 4)
+                if (message.StartIndex <= 8)
                 {
                     return;
                 }
@@ -100,11 +99,8 @@ namespace TCPServer
                     OperationCode code = (OperationCode)BitConverter.ToInt32(message.Data, 4);
                     string dataStr = Encoding.UTF8.GetString(message.Data, 8, dataCount);
                     OnReceiveCallBack(code, dataStr, clientSocket);
-                    Console.WriteLine("接收到的数据: " + code.ToString() + "  " + dataStr);
                     Array.Copy(message.Data, dataCount + 8, message.Data, 0, message.Data.Length - 8 - dataCount);
-                    //Console.WriteLine("before: " + message.StartIndex);
                     message.StartIndex = message.StartIndex - dataCount - 8;
-                    //Console.WriteLine("after: " + message.StartIndex);
                 }
                 else
                 {
@@ -432,9 +428,7 @@ namespace TCPServer
                     break;
                 case OperationCode.game:
                     Socket client;
-                    PlayerInfo info3;
-                    gameList.TryGetValue(data.Split(new char[] { '|' })[2], out info3);
-                    clientDictionary.TryGetValue(info3.GetOtherCode(data.Split(new char[] { '|' })[1]), out client);
+                    clientDictionary.TryGetValue(data.Split(new char[] { '|' })[1], out client);
                     client.Send(message.PackData(OperationCode.game, data));
                     break;
                 case OperationCode.chat:

@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userName: 
+  enemyName: 
   coin: -1
   soul: -1
   player_x: 0
@@ -158,6 +159,8 @@ MonoBehaviour:
   enemy: {fileID: 0}
   enemyAnim: {fileID: 0}
   allClickListener: {fileID: 0}
+  enemyPos: {x: -1, y: -1, z: -1}
+  enemyRot: {x: -1, y: -1, z: -1, w: -1}
 --- !u!4 &79471721
 Transform:
   m_ObjectHideFlags: 0

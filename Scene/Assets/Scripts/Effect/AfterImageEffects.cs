@@ -83,8 +83,11 @@ public class AfterImageEffects : MonoBehaviour
 
             if (_PassingTime > _AfterImageList[i]._Duration)
             {
-                _AfterImageList.Remove(_AfterImageList[i]);
-                Destroy(_AfterImageList[i]);
+                if (_AfterImageList.Contains(_AfterImageList[i]))
+                {
+                    _AfterImageList.Remove(_AfterImageList[i]);
+                    Destroy(_AfterImageList[i]);
+                }
                 continue;
             }
 

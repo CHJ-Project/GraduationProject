@@ -1,42 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 using common;
-using System.Net.Sockets;
+using System.Text;
+using System.Linq;
 
-namespace TCPServer
-{
-    class Message
+public class Message : MonoBehaviour {
+    private int startIndex = 0;
+    private byte[] data = new byte[1024];
+
+    public byte[] Data
     {
-        int startIndex = 0;
-        static byte[] data = new byte[3096];
+        get { return data; }
+    }
 
-        public byte[] Data
-        {
-            get { return data; }
-        }
+    public int StartIndex
+    {
+        get { return startIndex; }
+        set { startIndex = value; }
+    }
 
-        public int StartIndex
-        {
-            get { return startIndex; }
-            set { startIndex = value; }
-        }
+    public int SurplusSize
+    {
+        get { return data.Length - startIndex; }
+    }
 
-        public int SurplusSize
-        {
-            get { return data.Length - startIndex; }
-        }
-
-        public byte[] PackData(OperationCode code,string data)
-        {
-            byte[] codeBytes = BitConverter.GetBytes((int)code);
-            byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-            byte[] lengthBytes = BitConverter.GetBytes(dataBytes.Length);
-            return lengthBytes.Concat(codeBytes).ToArray<byte>().Concat(dataBytes).ToArray<byte>();
-        }
-        #region 解析数据方法
+    public byte[] PackData(OperationCode code, string data)
+    {
+        byte[] codeBytes = BitConverter.GetBytes((int)code);
+        byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+        byte[] lengthBytes = BitConverter.GetBytes(dataBytes.Length);
+        return lengthBytes.Concat(codeBytes).ToArray<byte>().Concat(dataBytes).ToArray<byte>();
+    }
+    #region 解析数据方法
         /*
         public void AnalyzeData(int count)
         {
@@ -64,5 +60,4 @@ namespace TCPServer
         }
         */
         #endregion
-    }
 }
