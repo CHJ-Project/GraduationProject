@@ -115,6 +115,8 @@ public class AllClickListener : MonoBehaviour {
 
     //英雄选择面板显示隐藏控制
     public GameObject heroselectview;
+    //倒计时
+    private int surplusTime = 59;
     
     //获取承载数据的脚本
     [HideInInspector]
@@ -599,7 +601,9 @@ public class AllClickListener : MonoBehaviour {
 
 	//跳转选择英雄面板
 	public void ButtonSelectHero(){
+        surplusTime = 59;
         heroselectview.SetActive(true);
+        Reciprocal();
         practiceview.SetActive(false);
         matchingselectview.SetActive(false);
         manmechineselectview.SetActive(false);
@@ -610,6 +614,21 @@ public class AllClickListener : MonoBehaviour {
         heroCamera.SetActive(true);
         mainCamera.enabled = false;
 	}
+
+    //选择英雄面板倒计时
+    private void Reciprocal()
+    {
+        heroselectview.transform.Find("txtSurplusTime").GetComponent<Text>().text = surplusTime.ToString();
+        surplusTime--;
+        if (surplusTime >= 0)
+        {
+            Invoke("Reciprocal", 1f);
+        }
+        else
+        {
+            selectHero();
+        }
+    }
 
     //practice按钮
     public void PracticeButton()

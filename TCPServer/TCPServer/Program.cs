@@ -53,9 +53,11 @@ namespace TCPServer
                 Console.WriteLine("从客户端接受到的数据为： " + msg);
                 */
                 int count = clientSocket.EndReceive(ar);
-                
-                AnalyzeData(count,clientSocket);
-                Console.WriteLine("index: " + message.StartIndex);
+                if (count > 0)
+                {
+                    AnalyzeData(count, clientSocket);
+                    Console.WriteLine("index: " + message.StartIndex);
+                }
                 //继续异步接收客户端发送的数据
                 clientSocket.BeginReceive(message.Data, message.StartIndex,message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
             }
@@ -79,6 +81,8 @@ namespace TCPServer
             //转成字符串数组进行传递
             clientSocket.Send(System.Text.Encoding.UTF8.GetBytes(msg));
             */
+            //开始接收客户端数据
+            clientSocket.BeginReceive(message.Data, message.StartIndex, message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
             //继续异步接收客户端连接
             serverSocket.BeginAccept(AcceptCallBack, null);
         }
