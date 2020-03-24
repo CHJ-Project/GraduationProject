@@ -240,7 +240,7 @@ public class GameController : MonoBehaviour {
         playerAnim.SetTrigger(skill);
         if (mode == "PVP_1v1")
         {
-            networkHelper.Send(OperationCode.game, "settrigger|" + networkHelper.GetSelfCode() + "|" + networkHelper.GetGameCode() + "|" + skill);
+            networkHelper.Send(OperationCode.game, "settrigger|" + networkHelper.GetOtherCode() + "|" + skill);
         }
     }
 

@@ -44,8 +44,7 @@ public class AllClickListener : MonoBehaviour {
     //获取登录注册界面
     public GameObject loginview;
 
-	//获取主界面背景以及主界面
-	public GameObject mainviewbg;
+	//获取主界面
 	public GameObject mainview;
 
 	//主界面左侧好友列表显示隐藏控制
@@ -87,9 +86,6 @@ public class AllClickListener : MonoBehaviour {
 
 	//商城面板显示隐藏控制
 	public GameObject shopview;
-
-	//活动面板显示隐藏控制
-	public GameObject activityview;
 
 	//成就面板显示隐藏控制
 	public GameObject achievementview;
@@ -152,8 +148,7 @@ public class AllClickListener : MonoBehaviour {
             mainview.transform.Find("topCenter/coinBar/txtCoin").GetComponent<Text>().text = networkHelper.coin;
             mainview.transform.Find("topCenter/soulBar/txtSoul").GetComponent<Text>().text = networkHelper.soul;
         }
-		//控制主界面背景以及主界面初始显示
-		mainviewbg.SetActive(true);
+		//控制主界面初始显示
 		mainview.SetActive (true);
 		//控制主相机显示，英雄相机初始隐藏
 		mainCamera.enabled = true;
@@ -187,8 +182,6 @@ public class AllClickListener : MonoBehaviour {
 		heroview.SetActive(false);
 		//控制商城面板初始隐藏
 		shopview.SetActive(false);
-		//控制活动面板初始隐藏
-		activityview.SetActive(false);
 		//控制成就面板初始隐藏
 		achievementview.SetActive(false);
 		//控制背包面板初始隐藏
@@ -445,7 +438,6 @@ public class AllClickListener : MonoBehaviour {
 		heroCamera.SetActive(true);
 		mainCamera.enabled = false;
 		mainview.SetActive (false);
-		mainviewbg.SetActive (false);
 		heroview.SetActive (true);
 	}
 
@@ -453,7 +445,6 @@ public class AllClickListener : MonoBehaviour {
 	public void HeroviewButtonBack(){
 		mainCamera.enabled = true;
 		mainview.SetActive (true);
-		mainviewbg.SetActive (true);
 		heroCamera.SetActive(false);
 		heroview.SetActive (false);
 	}
@@ -466,16 +457,6 @@ public class AllClickListener : MonoBehaviour {
 	//商城返回按钮
 	public void ShopviewButtonBack(){
 		shopview.SetActive (false);
-	}
-
-	//主界面活动按钮
-	public void ActivityButton(){
-		activityview.SetActive (true);
-	}
-
-	//活动返回按钮
-	public void ActivityButtonBack(){
-		activityview.SetActive (false);
 	}
 
 	//主界面成就按钮
@@ -609,7 +590,6 @@ public class AllClickListener : MonoBehaviour {
         manmechineselectview.SetActive(false);
         machingpanel.SetActive(false);
         machingsuccesspanel.SetActive(false);
-        mainviewbg.SetActive(false);
         mainview.SetActive(false);
         heroCamera.SetActive(true);
         mainCamera.enabled = false;
@@ -643,7 +623,6 @@ public class AllClickListener : MonoBehaviour {
         dontDestroyOnLoad.SetMode("PVP_1v1");
         machingpanel.SetActive(true);
         networkHelper.Send(OperationCode.maching, networkHelper.GetSelfCode());
-        mainviewbg.SetActive(true);
         mainview.SetActive(true);
         matchingselectview.SetActive(false);
         manmechineselectview.SetActive(false);

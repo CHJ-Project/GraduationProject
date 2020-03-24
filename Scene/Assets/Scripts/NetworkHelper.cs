@@ -66,10 +66,12 @@ public class NetworkHelper : MonoBehaviour {
         if (!enemyPos.Equals(new Vector3(-1,-1,-1)))
         {
             enemy.position = enemyPos;
+            enemyPos = new Vector3(-1, -1, -1);
         }
         if (!enemyRot.Equals(new Quaternion(-1,-1,-1,-1)))
         {
             enemy.rotation = enemyRot;
+            enemyRot = new Quaternion(-1, -1, -1, -1);
         }
         if (isSetBool)
         {

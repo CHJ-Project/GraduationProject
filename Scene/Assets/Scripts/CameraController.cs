@@ -141,7 +141,6 @@ public class CameraController : MonoBehaviour {
         */
         if (mode == "PVP_1v1")
         {
-            //networkHelper.Send(OperationCode.game, "position|" + networkHelper.GetSelfCode() + "|" + networkHelper.GetGameCode() + "|" + player.transform.position.x.ToString() + "|" + player.transform.position.y + "|" + player.transform.position.z);
             networkHelper.Send(OperationCode.game, "rotation|" + networkHelper.GetOtherCode() + "|" + player.transform.rotation.x + "|" + player.transform.rotation.y + "|" + player.transform.rotation.z + "|" + player.transform.rotation.w);
         }
     }

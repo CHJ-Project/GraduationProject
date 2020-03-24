@@ -51,16 +51,16 @@ public class RoleController : MonoBehaviour{
                 if (mode == "PVE_1v1")
                 {
                     Destroy(GameObject.Find("Enemy").GetComponent<AIController>());
-                    //玩家胜利
-                    if(collider.tag == "PlayerWeapon")
-                    {
-                        isVictory = true;
-                    }
-                    //敌人胜利
-                    else
-                    {
-                        isVictory = false;
-                    }
+                }
+                //玩家胜利
+                if (collider.tag == "PlayerWeapon")
+                {
+                    isVictory = true;
+                }
+                //敌人胜利
+                else
+                {
+                    isVictory = false;
                 }
                 Invoke("End", 1f);
             }
