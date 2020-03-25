@@ -98,10 +98,9 @@ public class AllClickListener : MonoBehaviour {
 
 	//匹配对战面板显示隐藏控制
 	public GameObject fightview;
-	//匹配对战三个面板
+	//匹配对战面板
 	public GameObject matchingselectview;
 	public GameObject manmechineselectview;
-	public GameObject createroomview;
 
 	//小游戏选择面板显示隐藏控制
 	public GameObject smallgameview;
@@ -190,10 +189,9 @@ public class AllClickListener : MonoBehaviour {
 		taskview.SetActive(false);
 		//控制匹配面板初始隐藏
 		fightview.SetActive(false);
-		//控制匹配对战里的三个面板初始隐藏
+		//控制匹配对战里的面板初始隐藏
 		matchingselectview.SetActive (false);
 		manmechineselectview.SetActive (false);
-		createroomview.SetActive (false);
 		//控制小游戏选择面板初始隐藏
 		smallgameview.SetActive(false);
         //控制英雄选择面板初始隐藏
@@ -521,16 +519,6 @@ public class AllClickListener : MonoBehaviour {
 	public void ManmechineselectviewButtonButton(){
 		fightview.SetActive (true);
 		manmechineselectview.SetActive (false);
-	}
-
-	//创建房间按钮
-	public void CreateroomviewButton(){
-		createroomview.SetActive (true);
-	}
-
-	//创建房间按钮
-	public void CreateroomviewButtonBack(){
-		createroomview.SetActive (false);
 	}
 
 	//主界面小游戏选择面板按钮

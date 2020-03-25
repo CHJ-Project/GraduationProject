@@ -12,8 +12,9 @@ namespace TCPServer
     class Program
     {
         static Socket serverSocket = null;
-        static Message message = new Message();
+        static Message serverMessage = new Message();
         static Dictionary<string,Socket> clientDictionary = new Dictionary<string,Socket>();        //客户端列表
+        static Dictionary<Socket, Message> clientMessage = new Dictionary<Socket, Message>();
         static int codeIndex = 0;
         static int gameCodeIndex = 0;
         static List<string> machingList = new List<string>();                                       //匹配队列
@@ -33,9 +34,29 @@ namespace TCPServer
             serverSocket.Listen(0);
             //同步接收一个客户端的连接
             //Socket clientSocket = serverSocket.Accept();
+            Thread t = new Thread(new ThreadStart(test));
+            t.Start();
+            //异步接收客户端连接
+            //serverSocket.BeginAccept(AcceptCallBack, null);
+            Console.ReadKey();
+        }
+
+        static void test()
+        {
             //异步接收客户端连接
             serverSocket.BeginAccept(AcceptCallBack, null);
-            Console.ReadKey();
+        }
+
+        //异步接收客户端连接回调函数
+        static void AcceptCallBack(IAsyncResult ar)
+        {
+            Socket clientSocket = serverSocket.EndAccept(ar);
+            Message msg = new Message();
+            clientMessage.Add(clientSocket, msg);
+            //开始接收客户端数据
+            clientSocket.BeginReceive(msg.Data, msg.StartIndex, msg.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
+            //继续异步接收客户端连接
+            serverSocket.BeginAccept(AcceptCallBack, null);
         }
 
         //异步接收消息回调函数
@@ -45,21 +66,17 @@ namespace TCPServer
             try
             {
                 clientSocket = ar.AsyncState as Socket;
-                /*
                 //结束挂起的异步,读取接收到的字节数。
-                int count = clientSocket.EndReceive(ar);
-                //将接收到的数据转换为字符串
-                string msg = Encoding.UTF8.GetString(message.Data, 0, count);
-                Console.WriteLine("从客户端接受到的数据为： " + msg);
-                */
                 int count = clientSocket.EndReceive(ar);
                 if (count > 0)
                 {
                     AnalyzeData(count, clientSocket);
-                    Console.WriteLine("index: " + message.StartIndex);
+                    Console.WriteLine("index: " + serverMessage.StartIndex);
                 }
+                Message msg = null;
+                clientMessage.TryGetValue(clientSocket, out msg);
                 //继续异步接收客户端发送的数据
-                clientSocket.BeginReceive(message.Data, message.StartIndex,message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
+                clientSocket.BeginReceive(msg.Data, msg.StartIndex, msg.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
             }
             catch(Exception e)
             {
@@ -71,40 +88,24 @@ namespace TCPServer
             }
         }
 
-        //异步接收客户端连接回调函数
-        static void AcceptCallBack(IAsyncResult ar)
-        {
-            Socket clientSocket = serverSocket.EndAccept(ar);
-            /*
-            //向客户端发送消息
-            string msg = "Hello client ！你好。。";
-            //转成字符串数组进行传递
-            clientSocket.Send(System.Text.Encoding.UTF8.GetBytes(msg));
-            */
-            //开始接收客户端数据
-            clientSocket.BeginReceive(message.Data, message.StartIndex, message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
-            //继续异步接收客户端连接
-            serverSocket.BeginAccept(AcceptCallBack, null);
-        }
-
         //解析数据
         static void AnalyzeData(int count,Socket clientSocket)
         {
-            message.StartIndex += count;
+            serverMessage.StartIndex += count;
             while (true)
             {
-                if (message.StartIndex <= 8)
+                if (serverMessage.StartIndex <= 8)
                 {
                     return;
                 }
-                int dataCount = BitConverter.ToInt32(message.Data, 0);
-                if (message.StartIndex >= dataCount + 8)
+                int dataCount = BitConverter.ToInt32(serverMessage.Data, 0);
+                if (serverMessage.StartIndex >= dataCount + 8)
                 {
-                    OperationCode code = (OperationCode)BitConverter.ToInt32(message.Data, 4);
-                    string dataStr = Encoding.UTF8.GetString(message.Data, 8, dataCount);
+                    OperationCode code = (OperationCode)BitConverter.ToInt32(serverMessage.Data, 4);
+                    string dataStr = Encoding.UTF8.GetString(serverMessage.Data, 8, dataCount);
                     OnReceiveCallBack(code, dataStr, clientSocket);
-                    Array.Copy(message.Data, dataCount + 8, message.Data, 0, message.Data.Length - 8 - dataCount);
-                    message.StartIndex = message.StartIndex - dataCount - 8;
+                    Array.Copy(serverMessage.Data, dataCount + 8, serverMessage.Data, 0, serverMessage.Data.Length - 8 - dataCount);
+                    serverMessage.StartIndex = serverMessage.StartIndex - dataCount - 8;
                 }
                 else
                 {
@@ -147,13 +148,13 @@ namespace TCPServer
                         cmd.Parameters.AddWithValue("password", commandStr.Split('|')[1]);
                         if (cmd.ExecuteNonQuery() == 1)
                         {
-                            clientSocket.Send(message.PackData(OperationCode.registersuccess, "注册成功"));
+                            clientSocket.Send(serverMessage.PackData(OperationCode.registersuccess, "注册成功"));
                             Console.WriteLine("注册成功！");
                         }
                     }
                     catch(Exception e)
                     {
-                        clientSocket.Send(message.PackData(OperationCode.error, "注册失败，账号已存在！"));
+                        clientSocket.Send(serverMessage.PackData(OperationCode.error, "注册失败，账号已存在！"));
                         Console.WriteLine("注册失败，账号已存在！");
                         Console.WriteLine(e);
                         Console.WriteLine();
@@ -179,7 +180,7 @@ namespace TCPServer
                                 if (Convert.ToInt32(reader["isLogin"]) == 1)
                                 {
                                     Console.WriteLine("该账号已登录!");
-                                    clientSocket.Send(message.PackData(OperationCode.error, "该账号已登录!"));
+                                    clientSocket.Send(serverMessage.PackData(OperationCode.error, "该账号已登录!"));
                                     nameReader.Close();
                                     reader.Close();
                                     return;
@@ -187,8 +188,8 @@ namespace TCPServer
                                 string name = reader["username"].ToString();
                                 string coin = reader["coin"].ToString();
                                 string soul = reader["soul"].ToString();
-                                clientSocket.Send(message.PackData(OperationCode.setselfcode, codeIndex.ToString()));
-                                clientSocket.Send(message.PackData(OperationCode.loginsuccess, name + "|" + coin + "|" + soul));
+                                clientSocket.Send(serverMessage.PackData(OperationCode.setselfcode, codeIndex.ToString()));
+                                clientSocket.Send(serverMessage.PackData(OperationCode.loginsuccess, name + "|" + coin + "|" + soul));
                                 clientDictionary.Add(codeIndex.ToString(), clientSocket);
                                 codeIndex++;
                                 nameReader.Close();
@@ -201,7 +202,7 @@ namespace TCPServer
                             }
                             else
                             {
-                                clientSocket.Send(message.PackData(OperationCode.error, "用户名或密码错误！"));
+                                clientSocket.Send(serverMessage.PackData(OperationCode.error, "用户名或密码错误！"));
                                 Console.WriteLine("用户名或密码错误！");
                                 nameReader.Close();
                                 reader.Close();
@@ -209,7 +210,7 @@ namespace TCPServer
                         }
                         else
                         {
-                            clientSocket.Send(message.PackData(OperationCode.error, "查无此号！"));
+                            clientSocket.Send(serverMessage.PackData(OperationCode.error, "查无此号！"));
                             Console.WriteLine("查无此号！");
                             nameReader.Close();
                         }
@@ -311,11 +312,11 @@ namespace TCPServer
                         clientDictionary.TryGetValue(machingList[0],out client1);
                         clientDictionary.TryGetValue(data.Split(new char[] { '|' })[0], out client2);
                         //发送gameCode
-                        client1.Send(message.PackData(OperationCode.setgamecode, gameCodeIndex.ToString()));
-                        client2.Send(message.PackData(OperationCode.setgamecode, gameCodeIndex.ToString()));
+                        client1.Send(serverMessage.PackData(OperationCode.setgamecode, gameCodeIndex.ToString()));
+                        client2.Send(serverMessage.PackData(OperationCode.setgamecode, gameCodeIndex.ToString()));
                         //分别发送对方的识别码给两个客户端
-                        client1.Send(message.PackData(OperationCode.setothercode, data.Split(new char[] { '|' })[0]));
-                        client2.Send(message.PackData(OperationCode.setothercode, machingList[0]));
+                        client1.Send(serverMessage.PackData(OperationCode.setothercode, data.Split(new char[] { '|' })[0]));
+                        client2.Send(serverMessage.PackData(OperationCode.setothercode, machingList[0]));
                         //将两个游戏中的客户端加入到正在游戏队列
                         PlayerInfo info1 = new PlayerInfo(machingList[0], data.Split(new char[] { '|' })[0]);
                         gameList.Add(gameCodeIndex.ToString(), info1);
@@ -362,11 +363,11 @@ namespace TCPServer
                         int r = (int)new Random().Next(1,5);
                         info2.sceneName = "scene_0" + r.ToString();
                         //分别发送对方选择的英雄
-                        client1.Send(message.PackData(OperationCode.setenemytype, info2.player2));
-                        client2.Send(message.PackData(OperationCode.setenemytype, info2.player1));
+                        client1.Send(serverMessage.PackData(OperationCode.setenemytype, info2.player2));
+                        client2.Send(serverMessage.PackData(OperationCode.setenemytype, info2.player1));
                         //分别发送对方的名字
-                        client1.Send(message.PackData(OperationCode.enemyname, info2.playerName2));
-                        client2.Send(message.PackData(OperationCode.enemyname, info2.playerName1));
+                        client1.Send(serverMessage.PackData(OperationCode.enemyname, info2.playerName2));
+                        client2.Send(serverMessage.PackData(OperationCode.enemyname, info2.playerName1));
                         float player1_x, player1_y, player1_z, player2_x, player2_y, player2_z;
                         player1_y = 5.9f;
                         player2_y = 5.9f;
@@ -377,10 +378,10 @@ namespace TCPServer
                             player2_x = -50 + random_x;
                             player1_z = random.Next(-6300, -6100) / 100f;
                             player2_z = random.Next(-7200, -7000) / 100f;
-                            client1.Send(message.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
-                            client1.Send(message.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
                         }
                         else if (info2.sceneName == "scene_02")
                         {
@@ -388,10 +389,10 @@ namespace TCPServer
                             player1_z = random.Next(50, 300) / 100f;
                             player2_x = random.Next(-200, 1600) / 100f;
                             player2_z = random.Next(800, 1050) / 100f;
-                            client1.Send(message.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
-                            client1.Send(message.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
                         }
                         else if (info2.sceneName == "scene_03")
                         {
@@ -399,10 +400,10 @@ namespace TCPServer
                             player1_z = random.Next(1600, 1850) / 100f;
                             player2_x = random.Next(-600, 1300) / 100f;
                             player2_z = random.Next(200, 450) / 100f;
-                            client1.Send(message.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
-                            client1.Send(message.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
                         }
                         else if (info2.sceneName == "scene_04")
                         {
@@ -410,14 +411,14 @@ namespace TCPServer
                             player1_z = random.Next(2400, 2650) / 100f;
                             player2_x = random.Next(-200, 2200) / 100f;
                             player2_z = random.Next(600, 850) / 100f;
-                            client1.Send(message.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
-                            client1.Send(message.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
-                            client2.Send(message.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
+                            client1.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setplayerinitialpos, player2_x.ToString() + "|" + player2_y.ToString() + "|" + player2_z.ToString()));
+                            client2.Send(serverMessage.PackData(OperationCode.setenemyinitialpos, player1_x.ToString() + "|" + player1_y.ToString() + "|" + player1_z.ToString()));
                         }
                         else { }
-                        client1.Send(message.PackData(OperationCode.setscene, info2.sceneName));
-                        client2.Send(message.PackData(OperationCode.setscene, info2.sceneName));
+                        client1.Send(serverMessage.PackData(OperationCode.setscene, info2.sceneName));
+                        client2.Send(serverMessage.PackData(OperationCode.setscene, info2.sceneName));
                     }
                     break;
                 case OperationCode.exit:
@@ -433,12 +434,12 @@ namespace TCPServer
                 case OperationCode.game:
                     Socket client;
                     clientDictionary.TryGetValue(data.Split(new char[] { '|' })[1], out client);
-                    client.Send(message.PackData(OperationCode.game, data));
+                    client.Send(serverMessage.PackData(OperationCode.game, data));
                     break;
                 case OperationCode.chat:
                     foreach (Socket i in clientDictionary.Values)
                     {
-                        i.Send(message.PackData(OperationCode.chat, data));
+                        i.Send(serverMessage.PackData(OperationCode.chat, data));
                     }
                     break;
                 case OperationCode.endgame:

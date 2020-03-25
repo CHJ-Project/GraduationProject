@@ -1,10 +1,10 @@
 ﻿/*
- this is the script that controls the burning of the fire effect by playing the fire animation on the shader main texture.
- it works by offsetting the UV on the sprite sheet on the main texture.
- for this to work you need to input the grid number of columns and rows from the inspector
- the fire effect on off is controlled by calling ToggleFlame(); from other script by SendMessage("ToggleFlame"); to the fire object where this script is attached, or by getComponent(PlaySpriteSheetAnimation).ToggleFire();
- you can control the playback on spritesheet animation by toggling the bool playSSAnimation,
- but that will not turn off the particle effect and it will not rewind the animation to 0.
+这是通过在明暗器主纹理上播放火焰动画来控制火焰效果燃烧的脚本。
+它的工作原理是在主纹理上偏移sprite工作表上的UV。
+为此，您需要从检查器中输入列和行的网格数
+关闭时的火焰效果由SendMessage（“ToggleFlame”）从其他脚本调用ToggleFlame（）；到附加此脚本的火焰对象，或由getComponent（PlaySpriteSheetAnimation）.ToggleFire（）控制；
+您可以通过切换bool playsanimation来控制spritesheet动画上的播放，
+但这不会关闭粒子效果，也不会将动画倒回0。
 */
 using UnityEngine;
 using System.Collections;
@@ -12,162 +12,153 @@ using System.Collections;
 public class PlaySpriteSheetAnimation : MonoBehaviour {
 	
 	
-    public int numberOfRows = 16;                       //number of rows in your sprite sheet
-    public int numberOfColumns = 8;                     //number of columns in your sprite sheet
-    
-	public int animationStartFrame = 0;                 //the frame you want the animation to start playing. in the flame sword example it is 0
-	
-	public int loopStartFrame = 55;                    	//starting frame of the loop. set this to the frame that is loop start of your animation
-    public int loopEndFrame = 126;                     	//end frame of the loop. after this frame if you have enableLoop set to true it will rewind to the loopStartFrame, if not it will stop at this frame as a last frame
-	
-	public bool enableLoop = true;                      //play it once, or rewind to loopStartFrame and play it from there
-    
-    public int playbackFPS = 40;						//the number of frames per second you wish the animation to have when playing forward
-    public int shutDownFPS = 100;						//the number of frames per second you wish the animation to have when rewinding backward
+    public int numberOfRows = 16;                       //行数
+    public int numberOfColumns = 8;                     //列数
 
-	private float framePerSecond = 40;                  //the current number of frame per second
-	
-	private bool playSSAnimation = true;				//bool that starts playing the animation
-    private bool shutdown = false;                      //bool that rewinds the animation to 0. and stooping the play when reach to 0 frame
-    
-	private int currentFame = 0;                        //index of the frame at given moment
-    private ParticleSystem particleOnOff; 				//my fire effect have shiruken particle system on the model. this variable hold that system for easy access. used to turn of the particles when animation is not playing. if you use this script for playing other sprite sheet you will have to comment all code related for turning on or off the particle system
+    public int animationStartFrame = 40;                 //希望动画开始播放的帧。在火焰剑的例子中是0
 
-    private Vector2 sizeOfTheFrame;                     //on normal UV size is 1,1
-    private float counter = 0.0f;                       //used to calculate frames per sec
-    private int xIndex = 0;								//current row
-    private int yIndex = 0;								//current column
+    public int loopStartFrame = 55;                    	//循环的起始帧.将此设置为动画循环开始的帧
+    public int loopEndFrame = 126;                     	//循环的结束帧。在此帧之后，如果enableLoop设置为true，则它将倒回loopStartFrame，否则它将作为最后一帧在此帧停止
+
+    public bool enableLoop = true;                      //播放一次，或倒带到loopStartFrame并从那里播放
+
+    public int playbackFPS = 40;						//向前播放时希望动画每秒具有的帧数
+    public int shutDownFPS = 100;						//倒带时希望动画每秒具有的帧数
+
+    private float framePerSecond = 40;                  //当前每秒帧数
+
+    private bool playSSAnimation = true;				//控制开始播放效果
+    private bool shutdown = false;                      //控制取消播放效果
+    
+	private int currentFame = 0;
+    private ParticleSystem particleOnOff;
+
+    private Vector2 sizeOfTheFrame;
+    private float counter = 0.0f;
+    private int xIndex = 0;
+    private int yIndex = 0;
 	
 	
-	//use this to toggle the flame effect on the sword. you just need to call ToggleFlame() from code 
+	//控制效果启动
 	public void ToggleFlame()
 	{
-		//if animation is playing
 		if(playSSAnimation == true)
 		{
-			
-			shutdown = true;												//set shutdown to true. this will rewind the animation to 0 and stop the animation and shuriken particle effect from playing
+			shutdown = true;
 		}
 		else
 		{
-			
-			playSSAnimation = true;											//if animation is not playing then play the animation
+			playSSAnimation = true;
 		}
 	}
 	
-	//this function is calculating the current frame. it is called in PlayTheAnimation() which is called in update and you don't have to use it or pass data to it
+	//计算当前帧
     void CalculateFrameIndex() 
     {
         if(shutdown)
         {
-			
-            framePerSecond = shutDownFPS;									//if you have different FPS when rewinding this line will set it
+            framePerSecond = shutDownFPS;									//如果您在倒带时有不同的FPS，此行将设置它
             
-            counter += Time.deltaTime * framePerSecond;						//Time.deltaTime is returning 1 in a second. when you multiply it to the FPS it will return FPS in 1 sec
+            counter += Time.deltaTime * framePerSecond;
             
 			//when counter go over 1
 			if (counter >= 1.0f)
             {
-                currentFame -= 1;											//reduce the current frame by 1
-                counter = 0.0f;												//reset the counter to 0
+                currentFame -= 1;											//当前帧减一
+                counter = 0.0f;												//重置counter为0
             }
 			
 			//if current frame is less then 1
             if (currentFame <= 0)
             {
-                currentFame = 0;											//set currentFrame to 0. you don't want negative number for current frame
-                playSSAnimation = false;									//turn off playing the animation
-                shutdown = false;											//turn of shutdown state
-                particleOnOff.enableEmission = false;//and turn off particle from emitting particles. if you don't have particle effect you will need to comment this line out
+                currentFame = 0;											//将currentFrame设置为0。
+                playSSAnimation = false;									//关闭播放动画
+                shutdown = false;											//关闭状态转换
+                particleOnOff.enableEmission = false;                       //禁用粒子系统
             }
         }
-		//if it is not the shutdown state it means that the sprite sheet is playing
         else 
         {
             
-            counter += Time.deltaTime * framePerSecond;						//Time.deltaTime is returning 1 in a second. when you multiply it to the FPS it will return FPS in 1 sec
-            
-			//when counter go over 1
+            counter += Time.deltaTime * framePerSecond;
+
+            //当计数器超过1时
 			if (counter >= 1.0f)
             {
-                currentFame += 1;											//reduce the current frame by 1
-                counter = 0.0f;												//reset the counter to 0
+                currentFame += 1;											//当前帧减一
+                counter = 0.0f;												//重置counter为0
             }
             
             
-            //if animation is looping 
+            //效果循环播放时
             if (enableLoop)
             {
-				//and current frame is at the loop end frame
+				//当效果播放到最后一帧时，将当前帧设置为起始帧
                 if (currentFame >= loopEndFrame)
                 {
-                    currentFame = loopStartFrame;							//rewind the current frame to the loop start frame
+                    currentFame = loopStartFrame;
                 }
             }
-			//if the animation is not looping
+			//非循环播放时
             else 
             {
-				//and current frame is at the loop end frame
+                //当效果播放到最后一帧时
                 if (currentFame >= loopEndFrame)
                 {
-                    currentFame = animationStartFrame;						//rewind the current frame to the animation start frame
-                    playSSAnimation = false;								//ad stop the playing of the animation
+                    currentFame = animationStartFrame;						//将当前帧回放到动画开始帧
+                    playSSAnimation = false;								//停止播放动画
                 }
 
             }
             
         }
-		
-		//if current frame is more then 0
+
+        //如果当前帧大于0
         if (currentFame > 0)
         {
-            particleOnOff.enableEmission = true;							//then particle effect should emit particles. if your effect don't have particles, you should comment out this all if statement 
+            particleOnOff.enableEmission = true;							//启动粒子系统
         }
     }
-	
-	
-	//this function is used to calculate the size of the UV frame
+
+
+    //此函数用于计算UV帧的大小
     void CalculateTheSizeOfTheFrame() 
     {
-        sizeOfTheFrame = new Vector2(1.0f / numberOfColumns, 1.0f / numberOfRows); //the size is 1 devided by the number of collumns and rows. the size is rectangle so sizeX =  1 / number of columns and sizeY = 1 / num of rows
+        sizeOfTheFrame = new Vector2(1.0f / numberOfColumns, 1.0f / numberOfRows); //size为1除以行列数之和，sizeX为1/列数，sizeY为1/行数
     }
 
-	//this function is the main one that calculate the offset of the UV and its used to play the animation by setting the offset in the _MainTex of the first material on the game object that contain this script
+	//设置偏移量，实现动画效果
     void PlayTheAnimation() 
     {
         CalculateFrameIndex();
 
-        
-        xIndex = currentFame % numberOfColumns;            									//current row
-        yIndex = currentFame / numberOfColumns;            									//current column
+        xIndex = currentFame % numberOfColumns;            									//当前行数
+        yIndex = currentFame / numberOfColumns;            									//当前列数
 
-        Vector2 offset;                                             						//the variable used to store x y offset for the texture UV
+        Vector2 offset;                                             						//用于存储纹理UV的x y偏移量的变量
 
-        
-        
-        offset =new Vector2 (xIndex * sizeOfTheFrame.x, ((numberOfRows-1)-yIndex)*sizeOfTheFrame.y); // calculate offset.  v coordinate is the bottom of the image in opengl so we need to invert.
+        offset = new Vector2(xIndex * sizeOfTheFrame.x, ((numberOfRows - 1) - yIndex) * sizeOfTheFrame.y); //计算偏移量。在opengl中，v坐标是图像的底部，所以需要进行反转。
 
-
-        GetComponent<Renderer>().material.SetTextureOffset("_MainTex", offset);                             //set the offset in UV texture
-        GetComponent<Renderer>().material.SetTextureScale("_MainTex", sizeOfTheFrame);                      //Set the texture scale in UV texture
+        GetComponent<Renderer>().material.SetTextureOffset("_MainTex", offset);                             //设置偏移量
+        GetComponent<Renderer>().material.SetTextureScale("_MainTex", sizeOfTheFrame);                      //在“UV纹理”中设置纹理比例
     }
 	
 	//start is called only once before update. it is used to initialize some variables
     void Start() 
     {
-        particleOnOff = this.gameObject.GetComponent("ParticleSystem")as ParticleSystem;		//get the particle system and save it to particleOnOff variable
-        CalculateTheSizeOfTheFrame();															//calculate the size of the UV frame
-        currentFame = animationStartFrame;														//rewind the current frame to the start frame
+        particleOnOff = this.gameObject.GetComponent("ParticleSystem") as ParticleSystem;		//获取粒子系统并将其保存到particleOnOff变量
+        CalculateTheSizeOfTheFrame();															//计算UV帧的大小
+        currentFame = animationStartFrame;														//将当前帧回放到开始帧
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-		//if true
+        //每帧检测是否开启火焰效果
         if (playSSAnimation) 
         {
-            framePerSecond = playbackFPS;														//set the FPS to playback fps
-            PlayTheAnimation();																	//play the animation
+            framePerSecond = playbackFPS;														//设置FPS
+            PlayTheAnimation();																	//播放动画
         }
         
 	}
