@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.007843138, b: 0.18431373, a: 1}
+  m_Color: {r: 0.9338235, g: 0.9338235, b: 0.9338235, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8c4242afae8d64948aaeae72a4ee74d4, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.007843138, b: 0.18431373, a: 1}
+  m_Color: {r: 0.9338235, g: 0.9338235, b: 0.9338235, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -245,7 +245,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8c4242afae8d64948aaeae72a4ee74d4, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.007843138, b: 0.18431373, a: 1}
+  m_Color: {r: 0.9338235, g: 0.9338235, b: 0.9338235, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -278,7 +278,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8c4242afae8d64948aaeae72a4ee74d4, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0

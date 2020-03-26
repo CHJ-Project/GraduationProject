@@ -32,11 +32,12 @@ public class AllClickListener : MonoBehaviour {
 	//通用遮罩
 	public GameObject mask;
 
-	//获取主相机
-	public Camera mainCamera;
-
-	//获取Hero相机
+	//获取Hero相机以及UI相机
 	public GameObject heroCamera;
+    public GameObject UICamera;
+
+    //获取背景音乐
+    private AudioSource bgm;
 
     //获取提示面板
     public GameObject tipspanel;
@@ -117,6 +118,11 @@ public class AllClickListener : MonoBehaviour {
     [HideInInspector]
     public DontDestroyOnLoad dontDestroyOnLoad;
 
+    //获取按钮音频
+    public AudioSource btnAudio_normal;
+    public AudioSource btnAudio_special;
+    public AudioSource btnAudio_back;
+
 	void Start(){
         //获取网络连接
         networkHelper = GameObject.Find("NetworkConnection").GetComponent<NetworkHelper>();
@@ -149,8 +155,7 @@ public class AllClickListener : MonoBehaviour {
         }
 		//控制主界面初始显示
 		mainview.SetActive (true);
-		//控制主相机显示，英雄相机初始隐藏
-		mainCamera.enabled = true;
+		//控制英雄摄像机初始隐藏
 		heroCamera.SetActive(false);
 		//控制通用遮罩初始隐藏
 		mask.SetActive(false);
@@ -196,6 +201,8 @@ public class AllClickListener : MonoBehaviour {
 		smallgameview.SetActive(false);
         //控制英雄选择面板初始隐藏
         heroselectview.SetActive(false);
+        //获取按钮按下音频
+        bgm = UICamera.GetComponent<AudioSource>();
 	}
 
     void Update()
@@ -358,11 +365,13 @@ public class AllClickListener : MonoBehaviour {
 
 	//主界面系统设置按钮
 	public void SettingviewButton(){
+        btnAudio_normal.Play();
 		settingview.SetActive (true);
 	}
 
 	//系统设置返回按钮
 	public void SettingviewButtonBack(){
+        btnAudio_back.Play();
 		settingview.SetActive (false);
 	}
 
@@ -389,11 +398,13 @@ public class AllClickListener : MonoBehaviour {
 
 	//主界面邮箱按钮
 	public void MailviewButton(){
+        btnAudio_normal.Play();
 		mailview.SetActive (true);
 	}
 
 	//邮箱界面返回按钮
 	public void MailviewButtonBack(){
+        btnAudio_back.Play();
 		mailview.SetActive (false);
 	}
 
@@ -411,11 +422,13 @@ public class AllClickListener : MonoBehaviour {
 
 	//主界面好友按钮
 	public void FriendviewButton(){
+        btnAudio_normal.Play();
 		friendview.SetActive (true);
 	}
 
-	//主界面好友按钮
+	//主界面好友返回按钮
 	public void FriendviewButtonBack(){
+        btnAudio_back.Play();
 		friendview.SetActive (false);
 	}
 
@@ -433,15 +446,15 @@ public class AllClickListener : MonoBehaviour {
 
 	//主界面英雄按钮
 	public void HeroviewButton(){
+        btnAudio_normal.Play();
 		heroCamera.SetActive(true);
-		mainCamera.enabled = false;
 		mainview.SetActive (false);
 		heroview.SetActive (true);
 	}
 
 	//英雄返回按钮
 	public void HeroviewButtonBack(){
-		mainCamera.enabled = true;
+        btnAudio_back.Play();
 		mainview.SetActive (true);
 		heroCamera.SetActive(false);
 		heroview.SetActive (false);
@@ -449,95 +462,113 @@ public class AllClickListener : MonoBehaviour {
 
 	//主界面商城按钮
 	public void ShopviewButton(){
+        btnAudio_normal.Play();
 		shopview.SetActive (true);
 	}
 
 	//商城返回按钮
 	public void ShopviewButtonBack(){
+        btnAudio_back.Play();
 		shopview.SetActive (false);
 	}
 
 	//主界面成就按钮
 	public void AchievementButton(){
+        btnAudio_normal.Play();
 		achievementview.SetActive (true);
 	}
 
 	//成就返回按钮
 	public void AchievementButtonBack(){
+        btnAudio_back.Play();
 		achievementview.SetActive (false);
 	}
 
 	//主界面背包按钮
 	public void BackpackviewButton(){
+        btnAudio_normal.Play();
 		backpackview.SetActive (true);
 	}
 
 	//背包返回按钮
 	public void BackpackviewButtonBack(){
+        btnAudio_back.Play();
 		backpackview.SetActive (false);
 	}
 
 	//主界面任务按钮
 	public void TaskviewButton(){
+        btnAudio_normal.Play();
 		taskview.SetActive (true);
 	}
 
 	//任务返回按钮
 	public void TaskviewButtonBack(){
+        btnAudio_back.Play();
 		taskview.SetActive (false);
 	}
 
 	//主界面匹配对战按钮
 	public void FightviewButton(){
+        btnAudio_special.Play();
 		fightview.SetActive (true);
 	}
 
 	//匹配对战返回按钮
 	public void FightviewButtonBack(){
+        btnAudio_back.Play();
 		fightview.SetActive (false);
 	}
 
 	//选择匹配对战按钮
 	public void MatchingselectviewButton(){
+        btnAudio_special.Play();
 		matchingselectview.SetActive (true);
 		fightview.SetActive (false);
 	}
 
 	//选择匹配对战返回按钮
 	public void MatchingselectviewButtonBack(){
+        btnAudio_back.Play();
 		fightview.SetActive (true);
 		matchingselectview.SetActive (false);
 	}
 
 	//选择人机对战按钮
 	public void ManmechineselectviewButton(){
+        btnAudio_special.Play();
 		manmechineselectview.SetActive (true);
 		fightview.SetActive (false);
 	}
 
 	//选择人机对战返回按钮
 	public void ManmechineselectviewButtonButton(){
+        btnAudio_back.Play();
 		fightview.SetActive (true);
 		manmechineselectview.SetActive (false);
 	}
 
 	//主界面小游戏选择面板按钮
 	public void SmallgameviewButton(){
+        btnAudio_special.Play();
 		smallgameview.SetActive (true);
 	}
 
 	//小游戏选择面板返回按钮
 	public void SmallgameviewButtonBack(){
+        btnAudio_back.Play();
 		smallgameview.SetActive (false);
 	}
 
 	//主界面练习选择面板
 	public void PracticeviewButton(){
+        btnAudio_special.Play();
 		practiceview.SetActive (true);
 	}
 
 	//练习选择面板返回按钮
 	public void PracticeviewButtonBack(){
+        btnAudio_back.Play();
 		practiceview.SetActive (false);
 	}
 
@@ -580,7 +611,6 @@ public class AllClickListener : MonoBehaviour {
         machingsuccesspanel.SetActive(false);
         mainview.SetActive(false);
         heroCamera.SetActive(true);
-        mainCamera.enabled = false;
 	}
 
     //选择英雄面板倒计时
@@ -640,5 +670,19 @@ public class AllClickListener : MonoBehaviour {
         {
             SceneManager.LoadScene("practice");
         }
+    }
+
+    //修改音效音量大小
+    public void SoundEffectOnValueChange()
+    {
+        btnAudio_back.volume = settingview.transform.Find("SoundEffectSlider").GetComponent<Slider>().value;
+        btnAudio_normal.volume = settingview.transform.Find("SoundEffectSlider").GetComponent<Slider>().value;
+        btnAudio_special.volume = settingview.transform.Find("SoundEffectSlider").GetComponent<Slider>().value;
+    }
+
+    //修改背景音乐音量大小
+    public void BGMOnValueChange()
+    {
+        bgm.volume = settingview.transform.Find("BGMSlider").GetComponent<Slider>().value;
     }
 }
