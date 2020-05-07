@@ -11,9 +11,7 @@ public class CameraController : MonoBehaviour {
     private GameObject player;				//摄像机跟随移动的目标(玩家)
     private Transform enemy;				//敌人
     private float camerarotateSpeed = 6f;	//控制摄像机旋转速度
-    //private float moveSpeed = 0.5f;			//控制摄像机靠近/远离的速度
     private bool lockCamera = false;        //控制摄像机锁定敌人
-    private bool isCameraFastMove = true;   //控制摄像机移动模式（速动/缓动）
     private bool canCameraTurn = true;      //控制摄像机能否围绕角色转动
     private float xz_distance;              //xz平面摄像机与玩家的距离
     private const float distanceUp = 2.6f;  //摄像机的高度
@@ -105,40 +103,13 @@ public class CameraController : MonoBehaviour {
 	void LateUpdate () {
         if (lockCamera)
         {
-            if (isCameraFastMove)
-            {
-                //镜头速动
-                transform.position = player.transform.position + (player.transform.position - enemy.position).normalized * (xz_distance + 2) + new Vector3(0, distanceUp + 0.5f, 0);
-            }
-            else
-            {
-                //镜头缓动
-                transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(distance_x, distance_y, distance_z), Time.deltaTime * 2f);
-            }
+            transform.position = player.transform.position + (player.transform.position - enemy.position).normalized * (xz_distance + 2) + new Vector3(0, distanceUp + 0.5f, 0);
             transform.LookAt(enemy.position + Vector3.up);
         }
         else
         {
-            if (isCameraFastMove)
-            {
-                //镜头速动
-                transform.position = player.transform.position + new Vector3(distance_x, distance_y, distance_z);
-            }
-            else
-            {
-                //镜头缓动
-                transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(distance_x, distance_y, distance_z), Time.deltaTime * 2f);
-            }
+            transform.position = player.transform.position + new Vector3(distance_x, distance_y, distance_z);
         }
-        //鼠标滚轮控制放大缩小镜头
-        /*
-		if (Input.GetAxis ("Mouse ScrollWheel") > 0 && Vector3.Distance(player.position,transform.position) > 5) {
-			transform.Translate (Vector3.forward * moveSpeed);
-		}
-		if (Input.GetAxis ("Mouse ScrollWheel") < 0 && Vector3.Distance(player.position,transform.position) < 15) {
-			transform.Translate (Vector3.forward * -1f * moveSpeed);
-		}
-        */
         if (mode == "PVP_1v1")
         {
             networkHelper.Send(OperationCode.game, "rotation|" + networkHelper.GetOtherCode() + "|" + player.transform.rotation.x + "|" + player.transform.rotation.y + "|" + player.transform.rotation.z + "|" + player.transform.rotation.w);

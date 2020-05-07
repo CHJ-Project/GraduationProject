@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour {
                 enemy.transform.rotation = Quaternion.LookRotation(player.transform.position - enemy.transform.position, Vector3.up);
                 networkHelper.enemy = enemy.transform;
                 networkHelper.enemyAnim = enemy.GetComponent<Animator>();
-                GameObject.Find("txtPlayerName_1").GetComponent<Text>().text = networkHelper.enemyName;
+                GameObject.Find("txtPlayerName_1").GetComponent<Text>().text = networkHelper.userName;
             }
             //人机对战1v1初始化
             if (dontDestoryOnLoad.GetMode() == "PVE_1v1")
@@ -126,6 +126,7 @@ public class GameController : MonoBehaviour {
                         break;
                 }
                 enemy.name = "Enemy";
+                GameObject.Find("txtPlayerName_1").GetComponent<Text>().text = networkHelper.userName;
                 player.transform.rotation = Quaternion.LookRotation(enemy.transform.position - player.transform.position, Vector3.up);
                 enemy.transform.rotation = Quaternion.LookRotation(player.transform.position - enemy.transform.position, Vector3.up);
             }

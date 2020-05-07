@@ -25,19 +25,16 @@ namespace TCPServer
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             ///申请id    127.0.0.1  本机
             //IPAddress ip = new IPAddress(new byte[] { 127, 0, 0, 1 });
-            IPAddress ipAddress = IPAddress.Parse("192.168.1.106");
+            IPAddress ipAddress = IPAddress.Parse("192.168.0.102");
             //申请端口号
             IPEndPoint endPoint = new IPEndPoint(ipAddress, 88);
             //绑定ip和端口号
             serverSocket.Bind(endPoint);
             //开始监听端口号（0 表示没有数量限制）
             serverSocket.Listen(0);
-            //同步接收一个客户端的连接
-            //Socket clientSocket = serverSocket.Accept();
+            //开启线程，异步接收客户端连接
             Thread t = new Thread(new ThreadStart(test));
             t.Start();
-            //异步接收客户端连接
-            //serverSocket.BeginAccept(AcceptCallBack, null);
             Console.ReadKey();
         }
 
@@ -91,14 +88,19 @@ namespace TCPServer
         //解析数据
         static void AnalyzeData(int count,Socket clientSocket)
         {
+            //数据有可能是不完整的，需要等待新数据的接收，这里把存储数据的起始索引根据已接收数据量进行增加
             serverMessage.StartIndex += count;
             while (true)
             {
-                if (serverMessage.StartIndex <= 8)
+                //一个枚举类型的长度是4，一个int类型的长度也是4，如果起始索引小于9，证明主要的数据还没有接收到
+                if (serverMessage.StartIndex < 9)
                 {
                     return;
                 }
+                //计算主要数据的长度
                 int dataCount = BitConverter.ToInt32(serverMessage.Data, 0);
+                //如果当前起始索引大于枚举类型加int类型加主要数据长度，则证明至少有一条完整的数据，可以进行解析，否则返回继续接收数据
+                //解析方法按照封装的要求，先解析枚举类型操作码，忽略记录主要数据长度的4个字节，再解析主要数据，最后将解析完的数据删除，并重置起始索引
                 if (serverMessage.StartIndex >= dataCount + 8)
                 {
                     OperationCode code = (OperationCode)BitConverter.ToInt32(serverMessage.Data, 4);

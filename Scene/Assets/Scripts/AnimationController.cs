@@ -7,11 +7,11 @@ public class AnimationController : MonoBehaviour {
     public MeshCollider[] weaponCollider;               //武器碰撞器
     
     private WeaponTrail myTrail;                        //拖尾效果
-    private MeshRenderer bodyTrailRender;                      //身体拖尾
+    private MeshRenderer bodyTrailRender;               //身体拖尾
     private BoxCollider leftFootCollider;               //武士左脚碰撞器
     private BoxCollider rightFootCollider;              //武士右脚碰撞器
     private AfterImageEffects[] afterImageEffects = new AfterImageEffects[3];      //残影效果
-    private new ParticleSystem particleSystem;              //chargeattk的横扫特效（使用粒子系统制作）
+    private new ParticleSystem particleSystem;          //chargeattk的横扫特效（使用粒子系统制作）
     private float t = 0.033f;
     private float tempT = 0;
     private float animationIncrement = 0.003f;

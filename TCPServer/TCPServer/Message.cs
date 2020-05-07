@@ -34,6 +34,7 @@ namespace TCPServer
             byte[] codeBytes = BitConverter.GetBytes((int)code);
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
             byte[] lengthBytes = BitConverter.GetBytes(dataBytes.Length);
+            //将转换好的byte数组以主要数据长度，枚举类型，主要数据顺序连接到一个byte数组中
             return lengthBytes.Concat(codeBytes).ToArray<byte>().Concat(dataBytes).ToArray<byte>();
         }
         #region 解析数据方法

@@ -55,8 +55,11 @@ public class NetworkHelper : MonoBehaviour {
         }
         this.name = "NetworkConnection";
         message = new Message();
-        clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);         //创建客户端
-        clientSocket.Connect(new IPEndPoint(IPAddress.Parse("192.168.1.106"), 88));                             //与服务器建立连接  本机: 127.0.0.1
+        //创建客户端
+        clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        //连接服务器
+        clientSocket.Connect(new IPEndPoint(IPAddress.Parse("192.168.0.102"), 88));
+        //开始异步接收信息
         clientSocket.BeginReceive(message.Data, message.StartIndex, message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
         GameObject.DontDestroyOnLoad(gameObject);
 	}

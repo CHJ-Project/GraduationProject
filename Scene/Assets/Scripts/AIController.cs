@@ -29,19 +29,6 @@ public class AIController : MonoBehaviour {
 	
 	void LateUpdate () {
         transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, Vector3.up);
-        /*
-        if (Vector3.Distance(transform.position, player.transform.position) > 2.7f)
-        {
-         * 
-        }
-        if (Vector3.Distance(transform.position, player.transform.position) > 1.5f && Vector3.Distance(transform.position, player.transform.position) <= 2.7f)
-        {
-         * 
-        }
-        if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
-        {
-         * 
-        }*/
 	}
 
     string AutoAttackMoveSkill()
@@ -162,6 +149,7 @@ public class AIController : MonoBehaviour {
 
     void ChangeState()
     {
+        //如果状态为Wait，判断与玩家的距离，若距离大于1.5，则将状态设置为AttackMove，负责就将状态设置为Attack
         if (state == AIState.Wait)
         {
             if (Vector3.Distance(transform.position, player.transform.position) > 1.5f)
@@ -174,26 +162,25 @@ public class AIController : MonoBehaviour {
             }
             Invoke("ChangeState", RandomWaitSeconds());
         }
+        //如果状态为AttackMove，则随机使用前进位移动画，朝着玩家移动，并且将状态设置为Attack
         else if (state == AIState.AttackMove)
         {
             enemy_anim.SetTrigger(AutoAttackMoveSkill());
             state = AIState.Attack;
             Invoke("ChangeState",0.45f);
         }
+        //如果状态围殴DefenseMove，则随机使用后退位移动画，朝玩家左右或后方移动，并且将状态设置为Wait
         else if (state == AIState.DefenseMove)
         {
             enemy_anim.SetTrigger(AutoDefenseMoveSkill());
             state = AIState.Wait;
             Invoke("ChangeState",0.1f);
         }
+        //如果状态为Attack，则随机使用角色攻击动画，并且将状态设置为DefenseMove
         else if(state == AIState.Attack){
             enemy_anim.SetTrigger(AutoAttackSkill());
             state = AIState.DefenseMove;
             Invoke("ChangeState", 1.5f);
-        }
-        else if (state == AIState.Defense)
-        {
-            enemy_anim.SetBool("BlockIdle", true);
         }
     }
 

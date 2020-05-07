@@ -48,18 +48,18 @@ public class ScreenAdaption : MonoBehaviour {
 
     void Start()
     {
+        //获取挂载UI的根节点
         rootTransform = GameObject.Find("UIROOT").transform;
-		//print (rootTransform);
+        //获取屏幕的宽高以及计算宽高比
         int width = Screen.width;
         int height = Screen.height;
-		//print (width + "  " + height);
         float proportion = (float)width / (float)height;
-        //print(proportion);
+        //若宽高比大于1.9，则需要进行内压像素
         if (proportion > normalRatio)
             _isNeedAdaption = true;
         else
             _isNeedAdaption = false;
-        //print("需要屏幕适配：" + _isNeedAdaption);
+        //对UI根节点下的每一个元素都进行内压像素操作
 		if (_isNeedAdaption) {
 			foreach (Transform transform in rootTransform) {
 				rectTransform = transform.GetComponent<RectTransform> ();

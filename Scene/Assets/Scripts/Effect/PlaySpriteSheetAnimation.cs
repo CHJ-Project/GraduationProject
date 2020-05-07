@@ -57,7 +57,7 @@ public class PlaySpriteSheetAnimation : MonoBehaviour {
     {
         if(shutdown)
         {
-            framePerSecond = shutDownFPS;									//如果您在倒带时有不同的FPS，此行将设置它
+            framePerSecond = shutDownFPS;									//设置倒带时的FPS
             
             counter += Time.deltaTime * framePerSecond;
             

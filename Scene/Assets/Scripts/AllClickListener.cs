@@ -447,6 +447,10 @@ public class AllClickListener : MonoBehaviour {
 	//主界面英雄按钮
 	public void HeroviewButton(){
         btnAudio_normal.Play();
+        warrior.SetActive(true);
+        ninja.SetActive(false);
+        swordsman.SetActive(false);
+        dontDestroyOnLoad.SetHero("Warrior");
 		heroCamera.SetActive(true);
 		mainview.SetActive (false);
 		heroview.SetActive (true);
@@ -601,6 +605,11 @@ public class AllClickListener : MonoBehaviour {
 
 	//跳转选择英雄面板
 	public void ButtonSelectHero(){
+        warrior.SetActive(true);
+        ninja.SetActive(false);
+        swordsman.SetActive(false);
+        dontDestroyOnLoad.SetHero("Warrior");
+
         surplusTime = 59;
         heroselectview.SetActive(true);
         Reciprocal();
