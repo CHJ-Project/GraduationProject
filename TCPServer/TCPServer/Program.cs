@@ -25,7 +25,8 @@ namespace TCPServer
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             ///申请id    127.0.0.1  本机
             //IPAddress ip = new IPAddress(new byte[] { 127, 0, 0, 1 });
-            IPAddress ipAddress = IPAddress.Parse("192.168.0.102");
+            Console.WriteLine("请输入ip地址：");
+            IPAddress ipAddress = IPAddress.Parse( Console.ReadLine()/*"192.168.0.101"*/);
             //申请端口号
             IPEndPoint endPoint = new IPEndPoint(ipAddress, 88);
             //绑定ip和端口号

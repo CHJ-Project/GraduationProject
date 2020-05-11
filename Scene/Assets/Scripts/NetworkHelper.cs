@@ -58,7 +58,7 @@ public class NetworkHelper : MonoBehaviour {
         //创建客户端
         clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         //连接服务器
-        clientSocket.Connect(new IPEndPoint(IPAddress.Parse("192.168.0.102"), 88));
+        clientSocket.Connect(new IPEndPoint(IPAddress.Parse("192.168.0.101"), 88));
         //开始异步接收信息
         clientSocket.BeginReceive(message.Data, message.StartIndex, message.SurplusSize, SocketFlags.None, ReceiveCallBack, clientSocket);
         GameObject.DontDestroyOnLoad(gameObject);
