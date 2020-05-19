@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn", "learn.csproj", "{408CDB01-8097-CE52-2EB1-135916EB45B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn.Editor", "learn.Editor.csproj", "{EB4C2B68-648A-B57A-ED31-45104676BD53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{408CDB01-8097-CE52-2EB1-135916EB45B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408CDB01-8097-CE52-2EB1-135916EB45B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408CDB01-8097-CE52-2EB1-135916EB45B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408CDB01-8097-CE52-2EB1-135916EB45B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4C2B68-648A-B57A-ED31-45104676BD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4C2B68-648A-B57A-ED31-45104676BD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4C2B68-648A-B57A-ED31-45104676BD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4C2B68-648A-B57A-ED31-45104676BD53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
